@@ -1,0 +1,342 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.header{padding:1.5rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.title{font-size:22px;font-weight:500;color:var(--color-text-primary)}
+.subtitle{font-size:14px;color:var(--color-text-secondary);margin-top:4px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
+.filter-btn{font-size:12px;padding:5px 12px;border:0.5px solid var(--color-border-secondary);border-radius:20px;background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer;transition:all .15s}
+.filter-btn.active{background:var(--color-background-tertiary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+.search-bar{width:100%;padding:8px 14px;font-size:14px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);margin-bottom:1rem}
+.search-bar:focus{outline:none;border-color:var(--color-border-primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;cursor:pointer;transition:border-color .15s}
+.card:hover{border-color:var(--color-border-primary)}
+.card.expanded{border-color:var(--color-border-secondary)}
+.card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.badge{font-size:11px;padding:3px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.badge-mer{background:#E1F5EE;color:#085041}
+.badge-mort{background:#F1EFE8;color:#444441}
+.badge-magie{background:#EEEDFE;color:#3C3489}
+.badge-royaute{background:#FAEEDA;color:#633806}
+.badge-creature{background:#FAECE7;color:#712B13}
+.badge-amour{background:#FBEAF0;color:#72243E}
+.card-name{font-size:15px;font-weight:500;color:var(--color-text-primary);line-height:1.3}
+.card-type{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
+.card-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:8px}
+.card-detail{display:none;margin-top:10px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)}
+.card.expanded .card-detail{display:block}
+.card-detail p{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:6px}
+.card-detail strong{font-weight:500;color:var(--color-text-primary)}
+.local-tag{font-size:11px;color:#185FA5;background:#E6F1FB;padding:2px 7px;border-radius:8px;display:inline-block;margin-top:6px}
+.age-tag{font-size:11px;color:var(--color-text-tertiary);float:right;margin-top:6px}
+.count{font-size:13px;color:var(--color-text-tertiary);margin-bottom:1rem}
+.ask-btn{font-size:12px;padding:4px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-secondary);cursor:pointer;margin-top:8px}
+.ask-btn:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="header">
+  <div class="title">Catalogue des contes bretons</div>
+  <div class="subtitle">Douarnenez & Cornouaille · Finistère · Bretagne</div>
+</div>
+
+<input class="search-bar" type="text" id="search" placeholder="Rechercher un conte, une créature, un personnage..." oninput="render()">
+
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('tous')">Tous</button>
+  <button class="filter-btn" onclick="setFilter('douarnenez')">Ancré à Douarnenez</button>
+  <button class="filter-btn" onclick="setFilter('mer')">Mer & marins</button>
+  <button class="filter-btn" onclick="setFilter('creature')">Créatures</button>
+  <button class="filter-btn" onclick="setFilter('mort')">Mort & au-delà</button>
+  <button class="filter-btn" onclick="setFilter('royaute')">Royauté & héros</button>
+  <button class="filter-btn" onclick="setFilter('magie')">Magie & sortilèges</button>
+  <button class="filter-btn" onclick="setFilter('amour')">Amour & tragédie</button>
+</div>
+
+<div class="count" id="count"></div>
+<div class="grid" id="grid"></div>
+
+<script>
+const contes = [
+  {
+    nom: "La Cité d'Ys (Ker Ys)",
+    type: "Légende fondatrice",
+    themes: ["mer","royaute","amour"],
+    localDouarnenez: true,
+    age: "Tous publics",
+    desc: "La ville engloutie dans la baie de Douarnenez, construite par le roi Gradlon pour sa fille Dahut.",
+    detail: "Le roi Gradlon bâtit Ys sous le niveau de la mer, protégée par une digue dont lui seul possède la clé. Sa fille Dahut, belle et dissolue, se laisse séduire par un cavalier rouge qui la convainc de voler la clé. La mer s'engouffre, engloutit la ville. Gradlon s'enfuit à cheval ; Saint Guénolé pousse Dahut dans les flots. Elle devient sirène. Par temps calme, les marins de Douarnenez entendent sonner les cloches d'Ys sous les vagues. L'île Tristan serait son dernier vestige.",
+    lieux: "Baie de Douarnenez, île Tristan",
+    personnages: "Roi Gradlon, Dahut (Ahès), Saint Guénolé"
+  },
+  {
+    nom: "Le Roi Marc'h",
+    type: "Légende locale",
+    themes: ["royaute","mer","magie"],
+    localDouarnenez: true,
+    age: "Dès 8 ans",
+    desc: "Le roi légendaire aux oreilles de cheval dont le palais se trouvait à Portz-Marc'h, près de Douarnenez.",
+    detail: "Marc'h, roi de Cornouaille, cache des oreilles de cheval sous sa couronne. Son secret ne peut être dit qu'à un roseau — qui, coupé et soufflé, le révèle à tout le monde. Son cheval Morvac'h galope sur les falaises avant les tempêtes, présage de naufrage. Dans une autre version, il chasse une biche blanche qui n'est autre que Dahut, princesse d'Ys.",
+    lieux: "Portz-Marc'h (près Douarnenez), falaises de Cornouaille",
+    personnages: "Roi Marc'h, Morvac'h (le cheval)"
+  },
+  {
+    nom: "L'Ankou",
+    type: "Figure légendaire",
+    themes: ["mort"],
+    localDouarnenez: false,
+    age: "Dès 10 ans",
+    desc: "La mort personnifiée : un grand squelette à la faux renversée, conduisant sa charrette grinçante.",
+    detail: "L'Ankou est le dernier mort de l'année, chargé de ramasser les âmes. On l'entend la nuit dans les chemins creux — sa charrette fait 'wig ha wag'. Il porte un large chapeau noir, ses yeux sont deux flammes. Sur les côtes, sa charrette devient le Bag-noz, le bateau de nuit. Entendre son passage est une annonce de mort prochaine, pour soi ou un proche. Figure panbrittonique, liée au dieu gaulois Sucellos.",
+    lieux: "Toute la Bretagne, renforcé sur les côtes",
+    personnages: "L'Ankou, le commis de l'Ankou"
+  },
+  {
+    nom: "Les Korrigans",
+    type: "Créatures du folklore",
+    themes: ["creature","magie"],
+    localDouarnenez: false,
+    age: "Dès 6 ans",
+    desc: "Petits êtres farceurs et malicieux qui dansent la nuit près des dolmens, des fontaines et dans les landes.",
+    detail: "Les korrigans (ou korriganed) sont des nains à chapeau pointu, grands nez et oreilles pointues. Ils sortent la nuit pour danser. Attention à ne pas entrer dans leur ronde sous peine d'être emporté pour cent ans ! Le seul moyen de les stopper : leur poser une devinette impossible à résoudre avant l'aube. Ils gardent des trésors dans les menhirs. Sur l'île d'Ouessant, on les appelle Tréo-Fall ou Danserien-noz.",
+    lieux: "Landes, forêts, dolmens, fontaines de Bretagne",
+    personnages: "Les korriganed (collectif)"
+  },
+  {
+    nom: "Les Lavandières de nuit (Kannerez-noz)",
+    type: "Légende nocturne",
+    themes: ["mort","magie"],
+    localDouarnenez: false,
+    age: "Dès 9 ans",
+    desc: "Des femmes maudites qui lavent des linceuls au clair de lune dans les fontaines isolées.",
+    detail: "Ces femmes vêtues de blanc lavent des linceuls — pas du linge ordinaire — dans les fontaines écartées. Si un voyageur s'approche, elles lui demandent d'aider à tordre. Il faut tordre dans le même sens qu'elles, sinon elles vous brisent les bras. Elles seraient des mères maudites ayant tué leurs enfants, condamnées à laver pour l'éternité.",
+    lieux: "Fontaines isolées, landes nocturnes",
+    personnages: "Les Kannerez-noz"
+  },
+  {
+    nom: "Le Bugul-noz",
+    type: "Créature nocturne",
+    themes: ["creature","mort"],
+    localDouarnenez: false,
+    age: "Dès 8 ans",
+    desc: "Le berger de la nuit, métamorphe et terrifiant, qui rôde dans les bois du Morbihan à minuit.",
+    detail: "Il se présente sous forme d'un berger portant un large chapeau — mais change d'apparence sans cesse. Ses sifflements dans la nuit avertissent de son approche. Tantôt loup-garou, tantôt protecteur, il pousse les hommes à fuir les territoires des esprits. Il peut aussi passer son manteau à quelqu'un pour le protéger des démons. Son pouvoir est à son apogée à minuit.",
+    lieux: "Bois et campagnes du Morbihan, chemins nocturnes",
+    personnages: "Le Bugul-noz"
+  },
+  {
+    nom: "Dahut la Sirène",
+    type: "Légende de mer",
+    themes: ["mer","amour","magie"],
+    localDouarnenez: true,
+    age: "Dès 8 ans",
+    desc: "La fille du roi Gradlon, devenue sirène après la destruction d'Ys, dont la légende reste attachée aux rivages de Douarnenez.",
+    detail: "Après la submersion d'Ys, Dahut ne périt pas : elle se transforme en sirène. Elle hante les eaux de la baie de Douarnenez, attirant les marins comme elle attirait jadis les amants dans la cité engloutie. Certains textes l'appellent Ahès. Dans une version, le Roi Marc'h lui décocha une flèche croyant viser une biche blanche.",
+    lieux: "Baie de Douarnenez, côtes de Cornouaille",
+    personnages: "Dahut / Ahès"
+  },
+  {
+    nom: "La Groac'h de l'île du Lok",
+    type: "Conte populaire",
+    themes: ["magie","amour","creature"],
+    localDouarnenez: false,
+    age: "Dès 10 ans",
+    desc: "Une fée aquatique maléfique qui transforme les jeunes hommes en poissons dans son palais sous-marin.",
+    detail: "Un jeune homme abandonne sa fiancée pour la richesse promise par la Groac'h, vieille fée des eaux aux longues dents vivant dans un palais sous-marin. Elle le transforme en poisson avec ses prédécesseurs. Sa fiancée courageuse, guidée par un nain, descend dans les profondeurs et brise le sort. La Groac'h est la figure de fée maléfique la plus répandue en Bretagne, notamment sur les îles Glénan.",
+    lieux: "Îles Glénan, sous-marin",
+    personnages: "La Groac'h, Houarn, Bellah"
+  },
+  {
+    nom: "Conomor le maudit",
+    type: "Légende historique",
+    themes: ["royaute","amour","mort"],
+    localDouarnenez: false,
+    age: "Dès 10 ans",
+    desc: "Le seigneur breton qui tue ses épouses dès qu'elles sont enceintes, inspiré du conte de Barbe-Bleue.",
+    detail: "Conomor, comte du Poher, a tué ses six premières femmes enceintes car une prophétie annonce qu'il mourra des mains de son fils. Il épouse Tréphine sous la pression de Saint-Gildas. Quand elle tombe enceinte, il lui coupe la tête. Son fils Trémeur naît et grandit. Saint-Gildas remet miraculeusement la tête de Tréphine en place. Conomor finit écrasé dans son château.",
+    lieux: "Forêt de Carnoët, Finistère",
+    personnages: "Conomor, Tréphine, Saint-Gildas, Trémeur"
+  },
+  {
+    nom: "Azénor dans le tonneau",
+    type: "Légende hagiographique",
+    themes: ["amour","mer","magie"],
+    localDouarnenez: false,
+    age: "Dès 9 ans",
+    desc: "Une jeune femme injustement accusée d'infidélité, jetée à la mer dans un tonneau, sauvée par un ange.",
+    detail: "Azénor, épouse du comte Chunaire, est victime de la jalousie de sa belle-mère qui convainc son père de son infidélité. Condamnée au bûcher, le feu refuse de s'allumer. On la met dans un tonneau jeté à la mer. Un ange l'accompagne jusqu'en Irlande. Elle y accouche de Budoc, qui deviendra saint. Elle est emprisonnée dans la tour qui porte son nom.",
+    lieux: "Côtes bretonnes, Irlande",
+    personnages: "Azénor, Budoc, l'ange"
+  },
+  {
+    nom: "Les Marie Morganes",
+    type: "Créatures aquatiques",
+    themes: ["creature","mer","magie"],
+    localDouarnenez: false,
+    age: "Dès 7 ans",
+    desc: "Les sirènes bretonnes, fées aquatiques nées de la mer, qui habitent un palais au fond des flots.",
+    detail: "Les Marie Morganes (ou Morgans) sont de belles créatures féminines nées de la mer ('Mor' = mer, 'ganet' = né). Elles habitent un somptueux palais sous-marin avec une organisation quasi-chrétienne (prêtre, église). Connues surtout à Ouessant. Elles peuvent aider les hommes ou se venger si on les méprise. Distinctes des Groac'h, elles sont bienveillantes.",
+    lieux: "Île d'Ouessant, côtes bretonnes",
+    personnages: "Les Marie Morganes (collectif)"
+  },
+  {
+    nom: "Le Bag-noz",
+    type: "Légende maritime",
+    themes: ["mer","mort"],
+    localDouarnenez: true,
+    age: "Dès 9 ans",
+    desc: "Le bateau fantôme de la nuit, version maritime de la charrette de l'Ankou, qui ramasse les âmes des noyés.",
+    detail: "Sur les côtes, l'Ankou ne conduit pas de charrette mais un bateau : le Bag-noz. Il glisse sans bruit dans les eaux nocturnes, ramassant les âmes. Certains marins affirmaient l'avoir vu au large de Douarnenez. En voir un est un présage de mort en mer. Parfois, des voix s'élèvent du bateau, reconnaissables comme celles de proches disparus.",
+    lieux: "Baie de Douarnenez, côtes du Finistère",
+    personnages: "L'Ankou marin"
+  },
+  {
+    nom: "La Fée des Houles",
+    type: "Créature côtière",
+    themes: ["creature","mer","magie"],
+    localDouarnenez: false,
+    age: "Dès 7 ans",
+    desc: "Les fées vivant dans les cavernes marines des côtes nord de la Bretagne, entre terre et mer.",
+    detail: "Les Fées des Houles vivent en groupe dans des grottes de bord de mer. Elles vivent avec des mâles (féetauds) et de minuscules lutins guerriers (Fions). Métamorphes et clairvoyantes, elles passent sans peine de la terre à la mer. Elles aident les humains qui les respectent et se vengent de ceux qui les offensent. Paul Sébillot en a collecté une cinquantaine de récits.",
+    lieux: "Côtes nord de Haute-Bretagne, falaises",
+    personnages: "La Fée des Houles, les Féetauds, les Fions"
+  },
+  {
+    nom: "Les Alignements de Carnac",
+    type: "Légende des pierres",
+    themes: ["magie","royaute"],
+    localDouarnenez: false,
+    age: "Dès 7 ans",
+    desc: "Des milliers de menhirs qui seraient une armée de soldats pétrifiés par Saint Cornély pour défendre la ville.",
+    detail: "Saint Cornély, saint patron de Carnac, était poursuivi par une armée romaine. Arrivé au bord de la mer, sans échappatoire, il se retourna et pétrifia tous les soldats. C'est ainsi que les alignements furent créés. D'autres versions parlent de korrigans pétrifiés par le soleil, ou de chevaliers d'un roi maudit.",
+    lieux: "Carnac (Morbihan)",
+    personnages: "Saint Cornély, armée romaine"
+  },
+  {
+    nom: "Merlin et Brocéliande",
+    type: "Cycle arthurien",
+    themes: ["magie","amour","royaute"],
+    localDouarnenez: false,
+    age: "Dès 8 ans",
+    desc: "L'enchanteur Merlin emprisonné dans la forêt de Brocéliande par la fée Viviane qu'il aimait.",
+    detail: "Merlin, l'enchanteur du roi Arthur, s'éprend de la fée Viviane (Dame du Lac). Elle lui extorque ses secrets magiques et l'enferme dans un arbre creux ou une caverne de la forêt de Paimpont. Son tombeau y est visible. La fontaine de Barenton, dans la même forêt, est dite magique : verser de son eau sur un rocher fait venir l'orage. La forêt est aussi le territoire du Val sans Retour.",
+    lieux: "Forêt de Brocéliande (Paimpont)",
+    personnages: "Merlin, Viviane, Lancelot, roi Arthur"
+  },
+  {
+    nom: "Tristan et Iseut",
+    type: "Légende arthurienne",
+    themes: ["amour","mer","royaute"],
+    localDouarnenez: false,
+    age: "Dès 10 ans",
+    desc: "L'amour maudit du chevalier Tristan et de la reine Iseut, née d'un philtre d'amour bu par erreur.",
+    detail: "Tristan est envoyé par son oncle le roi Marc (ici Marc'h) chercher Iseut d'Irlande pour l'épouser. Sur le bateau, les deux jeunes gens boivent par erreur un philtre d'amour destiné au mariage royal. Leur amour devient impossible et interdit. Ils se retrouvent en secret dans les forêts, pourchassés. Tristan finit par mourir, Iseut sur son corps. Le lien avec le Roi Marc'h de Cornouaille et Douarnenez est direct.",
+    lieux: "Cornouaille, mer, forêts de Bretagne",
+    personnages: "Tristan, Iseut, Roi Marc'h"
+  },
+  {
+    nom: "Gilles de Bretagne",
+    type: "Légende historique",
+    themes: ["royaute","mort"],
+    localDouarnenez: false,
+    age: "Adultes",
+    desc: "Prince breton du XVe siècle, emprisonné et assassiné par son frère le duc, figure de martyr.",
+    detail: "Gilles de Bretagne, frère du duc François Ier, est accusé de comploter avec les Anglais. Emprisonné au château de La Hardouinaye, il est laissé mourir de faim malgré ses suppliques. Il devient une figure de saint martyr populaire en Bretagne, objet de dévotion locale. Sa mort soulève une grande indignation et pèse sur la conscience du duc.",
+    lieux: "Bretagne ducale",
+    personnages: "Gilles de Bretagne, Duc François Ier"
+  },
+  {
+    nom: "Le Mourioche",
+    type: "Créature farceur",
+    themes: ["creature","magie"],
+    localDouarnenez: false,
+    age: "Dès 7 ans",
+    desc: "Un diablotin métamorphe et taquin qui prend toutes les formes imaginables pour jouer des tours.",
+    detail: "Le Mourioche est le grand farceur du folklore breton. Il peut se transformer en n'importe quoi : animal, objet, personne. Il vole, apparaît, disparaît, joue des tours tantôt drôles, tantôt méchants. Proche des Gobilins, il est toujours imprévisible. Ses farces vont de la simple blague au piège dangereux.",
+    lieux: "Toute la Bretagne",
+    personnages: "Le Mourioche"
+  },
+  {
+    nom: "Yan-gant-y-tan",
+    type: "Esprit nocturne",
+    themes: ["mort","magie"],
+    localDouarnenez: false,
+    age: "Dès 9 ans",
+    desc: "Jean-qui-tient-le-feu : un spectre portant cinq bougies sur les doigts qui erre dans les nuits bretonnes.",
+    detail: "Yan-gant-y-tan (Jean portant le feu) est un spectre condamné à errer dans la nuit en tenant cinq bougies allumées sur les doigts. Il les fait tournoyer à toute vitesse pour égarer les voyageurs. Le croiser la nuit est un mauvais présage. Certains le rattachent aux feux follets bretons (Letern-noz). Il punit les hommes qui ont mal agi de leur vivant.",
+    lieux: "Chemins nocturnes, landes",
+    personnages: "Yan-gant-y-tan"
+  },
+  {
+    nom: "Saint Guénolé et Gradlon",
+    type: "Légende hagiographique",
+    themes: ["mer","royaute","magie"],
+    localDouarnenez: true,
+    age: "Dès 8 ans",
+    desc: "Le saint fondateur de l'abbaye de Landévennec, lié à la destruction d'Ys et au salut du roi Gradlon.",
+    detail: "Saint Guénolé avertit le roi Gradlon du danger d'Ys et de la perversité de Dahut. C'est lui qui, lors de la fuite du roi à cheval, pousse Dahut dans les flots pour sauver Gradlon. Le roi Gradlon finit sa vie à Quimper — sa statue le montre à cheval entre les deux tours de la cathédrale. Saint Guénolé fonda l'abbaye de Landévennec, la plus ancienne de Bretagne.",
+    lieux: "Baie de Douarnenez, Quimper, Landévennec",
+    personnages: "Saint Guénolé, Roi Gradlon, Dahut"
+  }
+];
+
+let activeFilter = 'tous';
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('onclick').includes("'"+f+"'"));
+  });
+  render();
+}
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase();
+  let filtered = contes.filter(c => {
+    const matchSearch = !q || 
+      c.nom.toLowerCase().includes(q) || 
+      c.desc.toLowerCase().includes(q) || 
+      c.detail.toLowerCase().includes(q) ||
+      (c.personnages && c.personnages.toLowerCase().includes(q));
+    const matchFilter = activeFilter === 'tous' || 
+      (activeFilter === 'douarnenez' && c.localDouarnenez) ||
+      c.themes.includes(activeFilter);
+    return matchSearch && matchFilter;
+  });
+
+  document.getElementById('count').textContent = filtered.length + ' conte' + (filtered.length > 1 ? 's' : '') + ' trouvé' + (filtered.length > 1 ? 's' : '');
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = filtered.map((c, i) => {
+    const badgeMap = {mer:'badge-mer',mort:'badge-mort',magie:'badge-magie',royaute:'badge-royaute',creature:'badge-creature',amour:'badge-amour'};
+    const themeLabel = {mer:'Mer & marins',mort:'Mort & au-delà',magie:'Magie',royaute:'Royauté',creature:'Créature',amour:'Amour & tragédie'};
+    const mainTheme = c.themes[0];
+    return `<div class="card" id="card-${i}" onclick="toggle(${i})">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${c.nom}</div>
+          <div class="card-type">${c.type}</div>
+        </div>
+        <span class="badge ${badgeMap[mainTheme]}">${themeLabel[mainTheme]}</span>
+      </div>
+      <div class="card-desc">${c.desc}</div>
+      <div class="card-detail">
+        <p>${c.detail}</p>
+        ${c.lieux ? `<p><strong>Lieux :</strong> ${c.lieux}</p>` : ''}
+        ${c.personnages ? `<p><strong>Personnages :</strong> ${c.personnages}</p>` : ''}
+        ${c.localDouarnenez ? '<span class="local-tag">Ancré à Douarnenez</span>' : ''}
+        <span class="age-tag">${c.age}</span>
+        <br><button class="ask-btn" onclick="event.stopPropagation();sendPrompt('Raconte-moi le conte de '+${JSON.stringify(c.nom)}+' en version adaptée pour une animation')">Demander une version animateur ↗</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggle(i) {
+  const el = document.getElementById('card-'+i);
+  el.classList.toggle('expanded');
+}
+
+render();
+</script>
