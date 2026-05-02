@@ -120,10 +120,10 @@ body {
 }
 
 .cover-triskel {
-  width: 52px;
-  height: 52px;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 4px rgba(201,168,76,0.4));
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(201,168,76,0.5));
 }
 
 .cover-title {
