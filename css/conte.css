@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --fond:        #0D0A06;
+  --fond-page:   #13100B;
+  --parchemin:   #E8D9B5;
+  --parchemin-2: #C4AD85;
+  --parchemin-3: #8A7558;
+  --or:          #C9A84C;
+  --or-vif:      #E8C060;
+  --rouge:       #8B2222;
+  --bordure:     #3A2810;
+  --bordure-or:  #6B4A1C;
+  --conseil-fond:#1A1408;
+  --conseil-bord:#5A3E10;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IM Fell English', Georgia, serif;
+  background: var(--fond);
+  color: var(--parchemin);
+  min-height: 100vh;
+}
+
+/* ── En-tête / Hero ── */
+.hero {
+  background: #080604;
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid var(--bordure-or);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '᚛ ᚔ ᚑ ᚔ ᚜';
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--or);
+  opacity: 0.5;
+}
+.hero-inner { position: relative; z-index: 1; }
+.hero h1 {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--or-vif);
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  margin-bottom: .6rem;
+  text-shadow: 0 0 40px rgba(232,192,96,0.2);
+}
+.hero-sub {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--parchemin-3);
+  margin-bottom: 1.1rem;
+}
+.badges {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.badge {
+  font-family: 'IM Fell English', serif;
+  font-size: .72rem;
+  padding: .3rem .9rem;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.04);
+  color: var(--parchemin-2);
+  border: 1px solid var(--bordure-or);
+  letter-spacing: 0.03em;
+}
+.badge.local {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--or);
+  color: var(--or-vif);
+}
+
+/* ── Navigation chapitres ── */
+.nav-chapitres {
+  display: flex;
+  gap: .4rem;
+  padding: .85rem 1.5rem;
+  overflow-x: auto;
+  background: #080604;
+  border-bottom: 1px solid var(--bordure);
+  scrollbar-width: none;
+}
+.nav-chapitres::-webkit-scrollbar { display: none; }
+.nav-btn {
+  flex-shrink: 0;
+  font-family: 'IM Fell English', serif;
+  font-size: .75rem;
+  padding: .3rem .9rem;
+  border: 1px solid var(--bordure);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--parchemin-3);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.nav-btn:hover, .nav-btn.active {
+  background: rgba(201,168,76,0.1);
+  color: var(--or-vif);
+  border-color: var(--bordure-or);
+}
+
+/* ── Contenu ── */
+.main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+/* ── Info animateur ── */
+.info-anim {
+  margin: 1.75rem 0;
+  padding: .9rem 1.2rem;
+  background: rgba(201,168,76,0.05);
+  border-left: 2px solid var(--or);
+  font-size: .88rem;
+  color: var(--parchemin-2);
+  font-style: italic;
+}
+.info-anim strong { font-style: normal; color: var(--or); font-weight: 600; }
+
+/* ── Chapitres ── */
+.chapitre {
+  margin-top: 2.75rem;
+  scroll-margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.chapitre.visible { opacity: 1; transform: translateY(0); }
+
+.chapitre-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .9rem;
+}
+.chapitre-num {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: .65rem;
+  color: var(--or);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+.chapitre-titre {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 1.1rem;
+  color: var(--or-vif);
+  letter-spacing: .03em;
+}
+.chapitre-ligne {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--bordure-or), transparent);
+}
+
+/* ── Texte du conte ── */
+.texte p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--parchemin);
+  margin-bottom: .95rem;
+  text-align: justify;
+}
+.texte p:first-child::first-letter {
+  float: left;
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 3.6rem;
+  line-height: .75;
+  color: var(--or-vif);
+  margin-right: .07em;
+  margin-top: .08em;
+  text-shadow: 0 0 20px rgba(232,192,96,0.3);
+}
+.dialogue {
+  padding-left: 1.2rem;
+  border-left: 1px solid var(--bordure-or);
+  font-style: italic;
+  color: var(--parchemin-2);
+  margin: .4rem 0;
+}
+
+/* ── Conseil du conteur ── */
+.conseil-conteur {
+  margin: 1.25rem 0 .5rem;
+  padding: .9rem 1.1rem;
+  background: var(--conseil-fond);
+  border: 1px solid var(--conseil-bord);
+  border-radius: 2px;
+  position: relative;
+}
+.conseil-conteur::before,
+.conseil-conteur::after {
+  content: '✦';
+  position: absolute;
+  color: var(--or);
+  font-size: 8px;
+  opacity: 0.6;
+}
+.conseil-conteur::before { top: 6px; right: 10px; }
+.conseil-conteur::after  { bottom: 6px; left: 10px; }
+
+.conseil-label {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: .65rem;
+  letter-spacing: .1em;
+  color: var(--or);
+  margin-bottom: .45rem;
+  opacity: 0.85;
+}
+.conseil-texte {
+  font-size: .88rem;
+  line-height: 1.65;
+  color: var(--parchemin-3);
+  font-style: italic;
+}
+
+/* ── Fin / questions ── */
+.fin-bloc {
+  margin-top: 3.5rem;
+  padding: 1.5rem 1.75rem;
+  background: #0A0805;
+  border: 1px solid var(--bordure-or);
+  border-radius: 2px;
+  position: relative;
+}
+.fin-bloc::before {
+  content: '✦ ─────────────────── ✦';
+  display: block;
+  text-align: center;
+  color: var(--or);
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.4;
+  margin-bottom: 1rem;
+}
+.fin-titre {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  color: var(--or);
+  margin-bottom: .8rem;
+  opacity: 0.8;
+}
+.fin-questions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+.fin-questions li {
+  font-size: .95rem;
+  line-height: 1.55;
+  padding-left: 1.4rem;
+  position: relative;
+  color: var(--parchemin-2);
+  font-style: italic;
+}
+.fin-questions li::before {
+  content: '᛭';
+  position: absolute;
+  left: 0;
+  color: var(--or);
+  opacity: 0.6;
+  font-style: normal;
+}
+
+/* ── Barre de progression ── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--bordure-or), var(--or-vif), var(--bordure-or));
+  transition: width .1s;
+  z-index: 100;
+}

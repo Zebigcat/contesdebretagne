@@ -1,34 +1,231 @@
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans)}
-.header{padding:1.5rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
-.title{font-size:22px;font-weight:500;color:var(--color-text-primary)}
-.subtitle{font-size:14px;color:var(--color-text-secondary);margin-top:4px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
-.filter-btn{font-size:12px;padding:5px 12px;border:0.5px solid var(--color-border-secondary);border-radius:20px;background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer;transition:all .15s}
-.filter-btn.active{background:var(--color-background-tertiary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
-.search-bar{width:100%;padding:8px 14px;font-size:14px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);margin-bottom:1rem}
-.search-bar:focus{outline:none;border-color:var(--color-border-primary)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;cursor:pointer;transition:border-color .15s}
-.card:hover{border-color:var(--color-border-primary)}
-.card.expanded{border-color:var(--color-border-secondary)}
-.card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
-.badge{font-size:11px;padding:3px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;margin-top:2px}
-.badge-mer{background:#E1F5EE;color:#085041}
-.badge-mort{background:#F1EFE8;color:#444441}
-.badge-magie{background:#EEEDFE;color:#3C3489}
-.badge-royaute{background:#FAEEDA;color:#633806}
-.badge-creature{background:#FAECE7;color:#712B13}
-.badge-amour{background:#FBEAF0;color:#72243E}
-.card-name{font-size:15px;font-weight:500;color:var(--color-text-primary);line-height:1.3}
-.card-type{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
-.card-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:8px}
-.card-detail{display:none;margin-top:10px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)}
-.card.expanded .card-detail{display:block}
-.card-detail p{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:6px}
-.card-detail strong{font-weight:500;color:var(--color-text-primary)}
-.local-tag{font-size:11px;color:#185FA5;background:#E6F1FB;padding:2px 7px;border-radius:8px;display:inline-block;margin-top:6px}
-.age-tag{font-size:11px;color:var(--color-text-tertiary);float:right;margin-top:6px}
-.count{font-size:13px;color:var(--color-text-tertiary);margin-bottom:1rem}
-.ask-btn{font-size:12px;padding:4px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-secondary);cursor:pointer;margin-top:8px}
-.ask-btn:hover{background:var(--color-background-secondary)}
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --fond:        #0D0A06;
+  --fond-carte:  #16110C;
+  --fond-hover:  #201810;
+  --parchemin:   #E8D9B5;
+  --parchemin-2: #C4AD85;
+  --parchemin-3: #8A7558;
+  --or:          #C9A84C;
+  --or-vif:      #E8C060;
+  --bordure:     #3A2810;
+  --bordure-or:  #6B4A1C;
+  --radius:      3px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IM Fell English', Georgia, serif;
+  background: var(--fond);
+  color: var(--parchemin);
+  min-height: 100vh;
+}
+
+/* ── En-tête ── */
+.header {
+  padding: 2rem 0 1.25rem;
+  border-bottom: 1px solid var(--bordure-or);
+  margin-bottom: 1.5rem;
+}
+.header::after {
+  content: '⸻  ✦  ⸻';
+  display: block;
+  text-align: left;
+  color: var(--or);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+.title {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--or-vif);
+  letter-spacing: 0.04em;
+}
+.subtitle {
+  font-size: 13px;
+  color: var(--parchemin-3);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* ── Filtres ── */
+.filters {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.filter-btn {
+  font-family: 'IM Fell English', serif;
+  font-size: 12px;
+  padding: 4px 13px;
+  border: 1px solid var(--bordure-or);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--parchemin-3);
+  cursor: pointer;
+  transition: all .2s;
+  letter-spacing: 0.02em;
+}
+.filter-btn:hover {
+  background: rgba(201,168,76,0.08);
+  color: var(--parchemin);
+  border-color: var(--or);
+}
+.filter-btn.active {
+  background: rgba(201,168,76,0.14);
+  color: var(--or-vif);
+  border-color: var(--or-vif);
+}
+
+/* ── Recherche ── */
+.search-bar {
+  width: 100%;
+  padding: 8px 14px;
+  font-family: 'IM Fell English', serif;
+  font-size: 14px;
+  border: 1px solid var(--bordure-or);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.02);
+  color: var(--parchemin);
+  margin-bottom: 1rem;
+}
+.search-bar::placeholder { color: var(--parchemin-3); font-style: italic; }
+.search-bar:focus { outline: none; border-color: var(--or); background: rgba(201,168,76,0.04); }
+
+/* ── Grille ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Cartes ── */
+.card {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  pointer-events: none;
+  transition: border-color .2s;
+}
+.card:hover { border-color: var(--bordure-or); background: var(--fond-hover); }
+.card:hover::before { border-color: rgba(201,168,76,0.18); }
+.card.expanded { border-color: var(--or); }
+.card.expanded::before { border-color: rgba(201,168,76,0.28); }
+
+.card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 7px; }
+
+/* ── Badges ── */
+.badge {
+  font-family: 'IM Fell English', serif;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+.badge-mer      { background: rgba(10,30,50,0.7);  color: #7AADCC; border-color: #1F4A66; }
+.badge-mort     { background: rgba(15,10,8,0.7);   color: #A09080; border-color: #362416; }
+.badge-magie    { background: rgba(20,12,35,0.7);  color: #9B7FCC; border-color: #3A2060; }
+.badge-royaute  { background: rgba(35,22,5,0.7);   color: #C9A84C; border-color: #6B4A1C; }
+.badge-creature { background: rgba(35,10,10,0.7);  color: #CC7A6A; border-color: #661A1A; }
+.badge-amour    { background: rgba(35,8,20,0.7);   color: #CC7A99; border-color: #66183A; }
+
+.card-name {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--parchemin);
+  line-height: 1.4;
+}
+.card-type {
+  font-size: 11px;
+  color: var(--parchemin-3);
+  margin-top: 3px;
+  font-style: italic;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--parchemin-2);
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+.card-detail {
+  display: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--bordure);
+}
+.card.expanded .card-detail { display: block; }
+.card-detail p {
+  font-size: 13px;
+  color: var(--parchemin-2);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.card-detail strong { font-weight: 600; color: var(--or); }
+
+.local-tag {
+  font-size: 10px;
+  color: var(--or);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid var(--bordure-or);
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+.age-tag {
+  font-size: 11px;
+  color: var(--parchemin-3);
+  float: right;
+  margin-top: 6px;
+  font-style: italic;
+}
+.count {
+  font-size: 12px;
+  color: var(--parchemin-3);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.ask-btn {
+  font-family: 'IM Fell English', serif;
+  font-size: 12px;
+  padding: 4px 12px;
+  border: 1px solid var(--bordure-or);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--or);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all .2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.ask-btn:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--or-vif);
+  color: var(--or-vif);
+}
