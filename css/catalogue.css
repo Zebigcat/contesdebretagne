@@ -17,9 +17,8 @@ body {
 #landing {
   position: fixed;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   background: #080604;
   cursor: pointer;
   z-index: 10;
@@ -45,7 +44,7 @@ body {
   height: min(510px, 82vw);
   position: relative;
   transform-style: preserve-3d;
-  filter: drop-shadow(-18px 22px 60px rgba(0,0,0,0.95));
+  filter: drop-shadow(0px 16px 50px rgba(0,0,0,0.95));
 }
 
 /* Pages empilées (fond) */
@@ -193,20 +192,22 @@ body {
   width: min(900px, 100%);
   height: min(580px, calc(100vh - 5rem));
   box-shadow: 0 20px 70px rgba(0,0,0,0.95), 0 4px 16px rgba(0,0,0,0.6);
+  background: url('../images/pages.png') center/100% 100% no-repeat;
+  border-radius: 4px;
 }
 
 /* ── Pages ── */
 .page {
   flex: 1;
-  background: linear-gradient(155deg, #F2E5C2 0%, #E8D4A0 65%, #DECA88 100%);
+  background: transparent;
   color: #1C0A02;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
 }
-.page-gauche { border-radius: 4px 0 0 4px; box-shadow: inset -10px 0 24px rgba(0,0,0,0.1); }
-.page-droite { border-radius: 0 4px 4px 0; box-shadow: inset 10px 0 24px rgba(0,0,0,0.07); transform-origin: left center; }
+.page-gauche { border-radius: 4px 0 0 4px; box-shadow: inset -12px 0 28px rgba(0,0,0,0.12); }
+.page-droite { border-radius: 0 4px 4px 0; box-shadow: inset 12px 0 28px rgba(0,0,0,0.08); transform-origin: left center; }
 
 /* Animation page droite */
 .page-droite.tourne { animation: tourner 0.5s ease; }
