@@ -65,6 +65,7 @@ const contes = [
     themes: ["mer","royaute","amour"],
     localDouarnenez: true,
     age: "Tous publics",
+    page: "ys_conte.html",
     desc: "La ville engloutie dans la baie de Douarnenez, construite par le roi Gradlon pour sa fille Dahut.",
     detail: "Le roi Gradlon bâtit Ys sous le niveau de la mer, protégée par une digue dont lui seul possède la clé. Sa fille Dahut, belle et dissolue, se laisse séduire par un cavalier rouge qui la convainc de voler la clé. La mer s'engouffre, engloutit la ville. Gradlon s'enfuit à cheval ; Saint Guénolé pousse Dahut dans les flots. Elle devient sirène. Par temps calme, les marins de Douarnenez entendent sonner les cloches d'Ys sous les vagues. L'île Tristan serait son dernier vestige.",
     lieux: "Baie de Douarnenez, île Tristan",
@@ -327,7 +328,10 @@ function render() {
         ${c.personnages ? `<p><strong>Personnages :</strong> ${c.personnages}</p>` : ''}
         ${c.localDouarnenez ? '<span class="local-tag">Ancré à Douarnenez</span>' : ''}
         <span class="age-tag">${c.age}</span>
-        <br><button class="ask-btn" onclick="event.stopPropagation();sendPrompt('Raconte-moi le conte de '+${JSON.stringify(c.nom)}+' en version adaptée pour une animation')">Demander une version animateur ↗</button>
+        <br>${c.page
+          ? `<a class="ask-btn" href="${c.page}" onclick="event.stopPropagation()" style="text-decoration:none;display:inline-block">Lire le conte complet ↗</a>`
+          : `<span style="font-size:11px;color:var(--color-text-tertiary);margin-top:8px;display:inline-block">Version complète bientôt disponible</span>`
+        }
       </div>
     </div>`;
   }).join('');
