@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Légende de la Ville d'Ys — Version enfants</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu:       #1B3A5C;
+    --bleu-mid:   #2E6DA4;
+    --bleu-clair: #E8F2FB;
+    --or:         #8B6914;
+    --or-clair:   #FDF3DC;
+    --gris:       #2C2C2A;
+    --gris-leger: #5F5E5A;
+    --beige:      #F7F3ED;
+    --blanc:      #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--beige);
+    color: var(--gris);
+    min-height: 100vh;
+  }
+
+  /* ── En-tête ── */
+  .hero {
+    background: var(--bleu);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.03) 40px,
+      rgba(255,255,255,0.03) 41px
+    );
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+  }
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: .95rem;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 1rem;
+  }
+  .badges {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: 'Lora', serif;
+    font-size: .75rem;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.8);
+    border: 1px solid rgba(255,255,255,.2);
+  }
+  .badge.local { background: rgba(139,105,20,.4); border-color: rgba(139,105,20,.6); color: #fde68a; }
+
+  /* ── Nav chapitres ── */
+  .nav-chapitres {
+    display: flex;
+    gap: .4rem;
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+    background: var(--bleu);
+    border-top: 1px solid rgba(255,255,255,.1);
+    scrollbar-width: none;
+  }
+  .nav-chapitres::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    font-family: 'Lora', serif;
+    font-size: .78rem;
+    padding: .35rem .9rem;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 20px;
+    background: transparent;
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    border-color: rgba(255,255,255,.5);
+  }
+
+  /* ── Contenu principal ── */
+  .main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  /* ── Info animateur ── */
+  .info-anim {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--bleu-clair);
+    border-left: 3px solid var(--bleu-mid);
+    border-radius: 0 8px 8px 0;
+    font-size: .9rem;
+    color: var(--bleu);
+    font-style: italic;
+  }
+  .info-anim strong { font-style: normal; font-weight: 600; }
+
+  /* ── Chapitre ── */
+  .chapitre {
+    margin-top: 2.5rem;
+    scroll-margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .chapitre.visible { opacity: 1; transform: translateY(0); }
+
+  .chapitre-header {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .75rem;
+  }
+  .chapitre-num {
+    font-family: 'Cinzel', serif;
+    font-size: .7rem;
+    color: var(--bleu-mid);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .chapitre-titre {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: var(--bleu);
+    letter-spacing: .02em;
+  }
+  .chapitre-ligne {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--bleu-mid), transparent);
+  }
+
+  /* ── Texte du conte ── */
+  .texte p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--gris);
+    margin-bottom: .9rem;
+    text-align: justify;
+  }
+  .texte p:first-child::first-letter {
+    float: left;
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    line-height: .8;
+    color: var(--bleu);
+    margin-right: .08em;
+    margin-top: .1em;
+  }
+  .dialogue {
+    padding-left: 1.2rem;
+    border-left: 2px solid #d0ccc4;
+    font-style: italic;
+    color: #444;
+  }
+
+  /* ── Conseil du conteur ── */
+  .conseil-conteur {
+    margin: 1.2rem 0 .5rem;
+    padding: .9rem 1.1rem;
+    background: var(--or-clair);
+    border: 1px solid rgba(139,105,20,.25);
+    border-radius: 8px;
+    position: relative;
+  }
+  .conseil-label {
+    font-family: 'Cinzel', serif;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: .4rem;
+  }
+  .conseil-label::before { content: '✦  '; }
+  .conseil-texte {
+    font-size: .88rem;
+    line-height: 1.6;
+    color: #5a4a1a;
+    font-style: italic;
+  }
+
+  /* ── Fin ── */
+  .fin-bloc {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--bleu);
+    border-radius: 12px;
+    color: rgba(255,255,255,.85);
+  }
+  .fin-titre {
+    font-family: 'Cinzel', serif;
+    font-size: .85rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-bottom: .75rem;
+  }
+  .fin-questions {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .fin-questions li {
+    font-size: .95rem;
+    line-height: 1.5;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .fin-questions li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,.4);
+  }
+
+  /* ── Barre de progression ── */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--bleu-mid), var(--or));
+    transition: width .1s;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>La Légende de la Ville d'Ys</h1>
+    <p class="hero-sub">D'après les textes anciens de la légende bretonne</p>
+    <div class="badges">
+      <span class="badge local">★ Ancré à Douarnenez</span>
+      <span class="badge">Version enfants · 10 min</span>
+      <span class="badge">Dès 5–6 ans</span>
+      <span class="badge">Mer &amp; Royauté</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-chapitres" id="nav">
+  <button class="nav-btn active" onclick="scrollTo(0,0)">Début</button>
+  <button class="nav-btn" onclick="scrollToId('ch1')">🏰 Le vœu</button>
+  <button class="nav-btn" onclick="scrollToId('ch2')">🌊 Ys</button>
+  <button class="nav-btn" onclick="scrollToId('ch3')">😈 L'inconnu</button>
+  <button class="nav-btn" onclick="scrollToId('ch4')">💥 Le déluge</button>
+  <button class="nav-btn" onclick="scrollToId('ch5')">🕊️ Le choix</button>
+  <button class="nav-btn" onclick="scrollToId('ch6')">🧜 L'après</button>
+</nav>
+
+<div class="main">
+
+  <div class="info-anim">
+    <strong>Pour l'animateur :</strong> Les encadrés dorés sont des <em>Conseils du conteur</em> — ils ne se lisent pas à voix haute. Avant de commencer, montre aux enfants une carte de la Bretagne et trouve Douarnenez avec eux.
+  </div>
+
+  <!-- ── Intro ── -->
+  <div class="chapitre" id="ch0">
+    <div class="texte">
+      <p>Il était une fois, il y a très très longtemps, un roi qui s'appelait Gradlon. Il régnait sur un beau pays au bord de la mer : la Cornouaille, tout au bout de la Bretagne.</p>
+      <p>Gradlon aimait par-dessus tout sa fille Dahut. Elle avait les cheveux couleur de feu, les yeux verts comme les vagues, et elle était née sur un bateau, en pleine tempête, au milieu de l'océan. Depuis tout bébé, elle adorait la mer. Elle pouvait passer des heures à la regarder, à écouter le bruit des vagues, à rêver.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Montre une carte de la Bretagne. Trouve Douarnenez avec les enfants et dis : « C'est là, dans cette baie, que la ville d'Ys est endormie sous les vagues. » Laisse le silence s'installer avant de commencer.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 1 ── -->
+  <div class="chapitre" id="ch1">
+    <div class="chapitre-header">
+      <span class="chapitre-num">I</span>
+      <span class="chapitre-titre">🏰 Le vœu de Dahut</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Un matin, Dahut alla trouver son père avec un grand sourire.</p>
+      <p class="dialogue">— Père, dit-elle, j'ai un vœu, un seul. Construis-moi une ville sur la mer ! Une ville magnifique, entourée par les vagues, où l'on entendrait toujours le chant de l'océan.</p>
+      <p>Le roi Gradlon fronça les sourcils. Une ville sur la mer ? C'était impossible ! La mer était dangereuse, les tempêtes terribles. Comment construire là-dedans ?</p>
+      <p>Mais quand il vit les yeux de Dahut brillants d'espoir, son cœur fondit. Il appela ses meilleurs architectes, ses maçons les plus habiles, et il leur dit :</p>
+      <p class="dialogue">— Construisez la plus belle ville du monde, au bord de la mer. Et faites-la solide comme le roc !</p>
+      <p>Pendant des années, des centaines d'ouvriers travaillèrent jour et nuit. Ils taillèrent le granit, dressèrent des tours, bâtirent des palais aux toits écarlates. Et pour que la mer ne rentre pas dans la ville, ils construisirent une immense digue de pierre et de bronze, avec une grande porte.</p>
+      <p>Cette porte avait une serrure très spéciale. Il n'existait qu'une seule clé au monde pour l'ouvrir. Et cette clé, le roi Gradlon la portait autour du cou, nuit et jour, sans jamais la quitter.</p>
+      <p>Quand Dahut vit la ville terminée, elle en pleurait de bonheur.</p>
+      <p class="dialogue">— Père, dit-elle, c'est la plus belle chose que j'aie jamais vue !</p>
+      <p>La ville s'appelait Ys.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Fais une pause ici. Demande aux enfants : « Vous, si vous pouviez demander n'importe quoi à votre papa ou maman, qu'est-ce que vous demanderiez ? » Puis reprends.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 2 ── -->
+  <div class="chapitre" id="ch2">
+    <div class="chapitre-header">
+      <span class="chapitre-num">II</span>
+      <span class="chapitre-titre">🌊 La ville merveilleuse</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Ys était vraiment extraordinaire. Les maisons avaient des façades de pierre lisse et des volets colorés. Dans le port, des barques venaient de partout, chargées de marchandises. Dans les rues, les gens riaient et chantaient. C'était la cité la plus animée, la plus joyeuse, la plus riche de toute la Bretagne.</p>
+      <p>Dahut en était la princesse. Elle organisait des fêtes, des banquets, des jeux. Elle accueillait les voyageurs du bout du monde.</p>
+      <p>Mais à Quimper, le vieil évêque Corentin s'inquiétait. Il envoya un messager au roi Gradlon :</p>
+      <p class="dialogue">— Seigneur, dans la ville d'Ys on chante, on danse, on festoie — mais personne ne pense aux autres. Prenez garde ! Une cité qui oublie la sagesse court à sa perte.</p>
+      <p>Gradlon savait que le vieil évêque avait souvent raison. Mais il ne voulait pas faire de peine à Dahut. Il repoussait toujours le moment de lui parler sérieusement.</p>
+      <p>Et les fêtes continuaient, de plus en plus grandes, de plus en plus folles.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 3 ── -->
+  <div class="chapitre" id="ch3">
+    <div class="chapitre-header">
+      <span class="chapitre-num">III</span>
+      <span class="chapitre-titre">😈 L'inconnu en rouge</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Un soir d'automne, alors que la fête battait son plein dans les rues d'Ys, un inconnu arriva à la porte de la ville.</p>
+      <p>Il était grand, beau, vêtu tout en rouge — son manteau, ses bottes, son chapeau, tout rouge. Ses yeux brillaient d'un éclat étrange, comme deux braises dans la nuit.</p>
+      <p>Dahut le remarqua aussitôt. Elle s'avança vers lui.</p>
+      <p class="dialogue">— Qui es-tu, étranger ?<br>— Je suis un voyageur. J'ai entendu parler de la ville d'Ys et de sa princesse. On dit qu'elle est la plus belle du monde.</p>
+      <p>Dahut sourit, flattée. Elle invita l'inconnu au banquet. Ils dansèrent ensemble jusqu'à minuit. L'inconnu était charmant, drôle, mystérieux.</p>
+      <p>Mais ce que Dahut ne savait pas, c'est que cet homme n'était pas un homme ordinaire. C'était le Mal lui-même, venu tenter la princesse.</p>
+      <p>Au cœur de la nuit, l'inconnu se pencha vers Dahut et lui murmura à l'oreille :</p>
+      <p class="dialogue">— Princesse, ton père garde la clé de la grande porte. La vraie maîtresse d'Ys, ce devrait être toi. Donne-moi cette clé, et je te montrerai comment être vraiment libre.</p>
+      <p>Dahut hésita. Une petite voix en elle disait que c'était mal. Que son père lui avait toujours dit : « La clé ne doit jamais quitter mon cou. »</p>
+      <p>Mais l'inconnu avait des yeux si convaincants, une voix si douce...</p>
+      <p>Dahut se glissa dans la chambre de son père endormi. Doucement, tout doucement, elle souleva la clé d'or autour de son cou.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Prends une voix grave et mystérieuse pour l'inconnu. Chuchote presque quand il parle à Dahut. Laisse le silence peser avant que Dahut prenne sa décision. Demande ensuite : « Vous, vous auriez pris la clé ? »</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 4 ── -->
+  <div class="chapitre" id="ch4">
+    <div class="chapitre-header">
+      <span class="chapitre-num">IV</span>
+      <span class="chapitre-titre">💥 Le déluge</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>L'inconnu prit la clé. Et son sourire changea.</p>
+      <p>Ce n'était plus un sourire aimable. C'était le sourire du Mal qui a réussi son coup.</p>
+      <p>Il courut vers la grande porte de la digue. Il mit la clé dans la serrure. Il tourna.</p>
+      <p>La porte s'ouvrit.</p>
+      <p>Et la mer entra.</p>
+      <p>Pas doucement. Pas gentiment. En une vague immense, noire et rugissante, qui renversa tout sur son passage. Les maisons, les tours, les palais — tout disparaissait sous l'eau en quelques minutes. Les rues se remplirent. Les lumières s'éteignirent. Les cris des habitants se mêlèrent au tonnerre des flots.</p>
+      <p>Ys sombrait.</p>
+      <p>Le roi Gradlon se réveilla en sursaut. Son cheval magique Morvac'h — un cheval noir comme la nuit, capable de galoper sur les vagues — l'attendait dans la cour. Gradlon sauta en selle. Dans la panique, il saisit Dahut et la mit en croupe derrière lui.</p>
+      <p>Morvac'h bondit sur les eaux et galopa, galopa, galopa, fuyant la vague qui se dressait derrière eux comme une muraille.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">C'est le moment le plus intense. Ralentis. Baisse la voix. Laisse chaque phrase courte tomber seule. « La porte s'ouvrit. » — silence — « Et la mer entra. » — silence. Les enfants doivent sentir l'eau monter.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 5 ── -->
+  <div class="chapitre" id="ch5">
+    <div class="chapitre-header">
+      <span class="chapitre-num">V</span>
+      <span class="chapitre-titre">🕊️ Le choix impossible</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Alors, une voix s'éleva dans la nuit — la voix de l'évêque Corentin, portée par le vent :</p>
+      <p class="dialogue">— Gradlon ! La vague va vous rattraper ! Tanto que tu porteras ce poids derrière toi, tu ne seras pas sauvé !</p>
+      <p>Le roi se retourna. Il vit Dahut accrochée à lui. Sa fille. Sa lumière. Son enfant.</p>
+      <p>Il hésita une longue, longue seconde.</p>
+      <p>La vague était là, juste derrière, prête à les engloutir.</p>
+      <p>Gradlon ferma les yeux. Des larmes coulèrent sur ses joues. Et d'un geste qu'il mit toute sa vie à faire — le geste le plus difficile qu'il ait jamais fait — il poussa doucement Dahut dans les flots.</p>
+      <p>Morvac'h bondit en avant. La vague se referma derrière eux.</p>
+      <p>Gradlon était sauvé. Seul. Le cœur brisé pour toujours.</p>
+      <p>Il ne regarda pas en arrière.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 6 ── -->
+  <div class="chapitre" id="ch6">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VI</span>
+      <span class="chapitre-titre">🧜 L'après</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Derrière lui, là où était Ys, il n'y avait plus que la mer.</p>
+      <p>Mais Dahut ne mourut pas.</p>
+      <p>La mer l'avait prise, oui — mais la mer ne voulait pas la garder prisonnière. Elle la transforma. Dahut devint une sirène, une créature des eaux, mi-femme mi-poisson, aux longs cheveux dorés qui flottaient entre deux eaux.</p>
+      <p>Elle vit depuis lors dans la baie de Douarnenez, là où la ville d'Ys est endormie sous les vagues.</p>
+      <p>Le roi Gradlon finit sa vie à Quimper, triste et silencieux. Chaque soir, dit-on, il regardait en direction de la mer.</p>
+      <p>Et les marins de Douarnenez racontent encore aujourd'hui que par temps calme, quand la mer est plate comme un miroir et que le vent se tait, on peut entendre, venant du fond des eaux, le son d'une cloche qui sonne.</p>
+      <p>C'est la cathédrale d'Ys.</p>
+      <p>Elle sonne pour que personne n'oublie.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Après la dernière phrase, laisse le silence durer plusieurs secondes. Puis demande doucement : « Qu'est-ce que vous pensez de Dahut ? Et de Gradlon ? Qui a fait une erreur ? » Il n'y a pas de mauvaise réponse.</p>
+    </div>
+  </div>
+
+  <!-- ── Questions ── -->
+  <div class="fin-bloc">
+    <div class="fin-titre">Questions pour discuter après le conte</div>
+    <ul class="fin-questions">
+      <li>Pourquoi Dahut a-t-elle pris la clé ? Est-ce qu'elle est méchante ?</li>
+      <li>Gradlon a-t-il bien fait de pousser Dahut dans la mer ?</li>
+      <li>Qu'est-ce que ça veut dire que les cloches sonnent encore sous l'eau ?</li>
+      <li>Si tu étais Gradlon, qu'est-ce que tu aurais fait différemment ?</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  // Barre de progression
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  // Apparition des chapitres au scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.chapitre').forEach(el => obs.observe(el));
+
+  // Navigation
+  function scrollToId(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Mise en surbrillance du chapitre actif dans la nav
+  const chapitres = document.querySelectorAll('.chapitre');
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const chapIds = ['ch0','ch1','ch2','ch3','ch4','ch5','ch6'];
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    chapitres.forEach((ch, i) => {
+      if (ch.getBoundingClientRect().top < window.innerHeight / 2) current = i;
+    });
+    navBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
