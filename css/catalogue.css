@@ -192,7 +192,6 @@ body {
   width: min(1375px, 100%);
   height: min(875px, calc(100vh - 2rem));
   box-shadow: 0 20px 70px rgba(0,0,0,0.95), 0 4px 16px rgba(0,0,0,0.6);
-  background: url('../images/pages.png') center/100% 100% no-repeat;
   border-radius: 4px;
 }
 
@@ -200,7 +199,7 @@ body {
 .page {
   flex: 1;
   min-width: 0;
-  background: transparent;
+  background: linear-gradient(160deg, #F0E4C0 0%, #E8D4A0 70%, #DECA88 100%);
   color: #1C0A02;
   display: flex;
   flex-direction: column;
