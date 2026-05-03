@@ -88,6 +88,32 @@ body {
   color: var(--or-vif);
 }
 
+/* ── Bouton retour ── */
+.btn-retour {
+  display: inline-block;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  font-family: 'IM Fell English', serif;
+  font-size: .8rem;
+  font-style: italic;
+  color: rgba(201,168,76,0.7);
+  text-decoration: none;
+  padding: .4rem .9rem;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 2px;
+  background: rgba(8,6,4,0.75);
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.03em;
+  transition: all .2s;
+}
+.btn-retour:hover {
+  color: var(--or-vif);
+  border-color: var(--or);
+  background: rgba(8,6,4,0.9);
+}
+
 /* ── Illustration hero ── */
 .hero-illus {
   display: block;
