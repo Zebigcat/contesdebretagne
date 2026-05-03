@@ -189,8 +189,8 @@ body {
 
 .livre {
   display: flex;
-  width: min(1100px, 96vw);
-  height: min(700px, calc(100vh - 3rem));
+  width: min(1375px, 96vw);
+  height: min(875px, calc(100vh - 2rem));
   box-shadow: 0 20px 70px rgba(0,0,0,0.95), 0 4px 16px rgba(0,0,0,0.6);
   background: url('../images/pages.png') center/100% 100% no-repeat;
   border-radius: 4px;
