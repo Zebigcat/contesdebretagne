@@ -199,12 +199,15 @@ body {
 /* ── Pages ── */
 .page {
   flex: 1;
+  min-width: 0;
   background: transparent;
   color: #1C0A02;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .page-gauche { border-radius: 4px 0 0 4px; box-shadow: inset -12px 0 28px rgba(0,0,0,0.12); }
 .page-droite { border-radius: 0 4px 4px 0; box-shadow: inset 12px 0 28px rgba(0,0,0,0.08); transform-origin: left center; }
@@ -358,19 +361,19 @@ body {
 ══════════════════════════════ */
 .detail-nom {
   font-family: 'Uncial Antiqua', serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: #1C0A02;
   line-height: 1.35;
   letter-spacing: 0.03em;
   margin-bottom: 2px;
 }
-.detail-type { font-size: 11px; color: rgba(80,40,10,0.6); font-style: italic; margin-bottom: 8px; }
+.detail-type { font-size: 10px; color: rgba(80,40,10,0.6); font-style: italic; margin-bottom: 6px; }
 
-.detail-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 9px; }
+.detail-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 7px; }
 .badge-page {
-  font-size: 9px; padding: 2px 7px; border-radius: 2px;
-  border: 1px solid; letter-spacing: 0.05em; text-transform: uppercase;
+  font-size: 9px; padding: 2px 6px; border-radius: 2px;
+  border: 1px solid; letter-spacing: 0.04em; text-transform: uppercase;
 }
 .badge-page.badge-mer      { background: rgba(30,80,120,0.09);  color: #1A5080; border-color: rgba(30,80,120,0.22); }
 .badge-page.badge-mort     { background: rgba(40,20,10,0.09);   color: #4A2810; border-color: rgba(40,20,10,0.22); }
@@ -379,14 +382,14 @@ body {
 .badge-page.badge-creature { background: rgba(120,30,20,0.09);  color: #7A2010; border-color: rgba(120,30,20,0.18); }
 .badge-page.badge-amour    { background: rgba(120,20,60,0.09);  color: #7A1840; border-color: rgba(120,20,60,0.18); }
 
-.detail-desc { font-size: 13px; line-height: 1.75; color: #2A1204; margin-bottom: 7px; font-style: italic; }
+.detail-desc { font-size: 11.5px; line-height: 1.7; color: #2A1204; margin-bottom: 6px; font-style: italic; }
 
-.separateur { font-size: 10px; color: rgba(120,70,20,0.35); text-align: center; letter-spacing: 4px; margin: 7px 0; }
+.separateur { font-size: 10px; color: rgba(120,70,20,0.35); text-align: center; letter-spacing: 4px; margin: 6px 0; }
 
-.detail-texte { font-size: 12px; line-height: 1.8; color: #3A1A08; margin-bottom: 9px; text-align: justify; }
+.detail-texte { font-size: 11px; line-height: 1.75; color: #3A1A08; margin-bottom: 8px; text-align: justify; }
 
-.detail-meta { margin-bottom: 8px; }
-.detail-meta p { font-size: 11px; color: rgba(60,30,10,0.68); line-height: 1.5; margin-bottom: 3px; }
+.detail-meta { margin-bottom: 7px; }
+.detail-meta p { font-size: 10px; color: rgba(60,30,10,0.68); line-height: 1.5; margin-bottom: 3px; }
 .detail-meta strong { color: #4A2810; font-weight: 600; }
 
 .detail-pied { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
