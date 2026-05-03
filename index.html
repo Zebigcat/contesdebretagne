@@ -380,6 +380,16 @@ function voirPage(cote) {
     btnCte.classList.remove('actif');
   }
 }
+
+// Ouvrir directement le livre si on vient d'une page de conte
+if (location.hash === '#livre') {
+  document.getElementById('landing').classList.add('cache');
+  const livre = document.getElementById('livre');
+  livre.classList.remove('cache');
+  renderListe();
+  afficherConte(0, true);
+  history.replaceState(null, '', location.pathname);
+}
 </script>
 </body>
 </html>
