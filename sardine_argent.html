@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Sardine d'Argent — Contes de Bretagne</title>
+<link rel="stylesheet" href="css/conte.css">
+</head>
+<body>
+
+<a class="btn-retour" href="index.html#livre">← Grimoire</a>
+<div class="progress-bar" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>La Sardine d'Argent</h1>
+    <p class="hero-sub">Pierre le marin — Douarnenez · Ploaré · Plage du Ris</p>
+    <div class="badges">
+      <span class="badge local">★ Douarnenez · Ploaré · Plage du Ris</span>
+      <span class="badge">Version enfants · 15 min</span>
+      <span class="badge">Dès 6 ans</span>
+      <span class="badge">Mer &amp; Magie &amp; Amour</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-chapitres" id="nav">
+  <button class="nav-btn active" onclick="scrollTo(0,0)">Début</button>
+  <button class="nav-btn" onclick="scrollToId('ch1')">Jeannette</button>
+  <button class="nav-btn" onclick="scrollToId('ch2')">La sardine</button>
+  <button class="nav-btn" onclick="scrollToId('ch3')">Le cheval</button>
+  <button class="nav-btn" onclick="scrollToId('ch4')">Le collier</button>
+  <button class="nav-btn" onclick="scrollToId('ch5')">L'or</button>
+  <button class="nav-btn" onclick="scrollToId('ch6')">La noce</button>
+</nav>
+
+<div class="main">
+
+  <div class="info-anim">
+    <strong>Pour l'animateur :</strong> Les encadrés sont des <em>Conseils du conteur</em> — ils ne se lisent pas à voix haute. Tous les lieux de ce conte sont réels : la pointe du Leydé et la plage du Ris sont à Douarnenez, Ploaré est le village voisin, et le pardon de Sainte-Anne-la-Palud est le grand pardon de la région, encore célébré aujourd'hui. C'est un conte léger et malicieux — le père avare est le vrai personnage comique. La chute finale est particulièrement savoureuse avec les enfants.
+  </div>
+
+  <!-- ── Intro ── -->
+  <div class="chapitre" id="ch0">
+    <div class="texte">
+      <p>Il y a longtemps, bien longtemps de cela, un jeune marin de Douarnenez pêcha, un jour, une sardine d'argent.</p>
+      <p>Mais il faut d'abord que je te dise qui était ce jeune pêcheur. Il avait pour nom Pierre — c'était un grand gaillard aux yeux bleus rieurs, beau garçon ma foi ! Il était marin comme son père, comme son grand-père, comme tous ceux de sa famille. Son père s'était noyé alors que Pierre était tout petit. Sa mère aurait bien voulu qu'il choisisse une autre profession, mais rien à faire : Pierre ne voulait être que marin. Il aimait trop la mer.</p>
+      <p>Pourtant on ne fait pas fortune dans ce métier-là, et la mère avait bien souvent du mal à joindre les deux bouts. Pour toute fortune, ils avaient leur petite barque et leur petite maison — mais d'argent, point.</p>
+      <p>Pierre, cela ne le dérangeait pas tant qu'il pouvait rapporter de quoi manger à la maison. Mais tout changea le jour où il rencontra la belle Jeannette.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Commence sur un ton de conteur malicieux — « il faut d'abord que je te dise qui était ce jeune pêcheur » s'adresse directement aux enfants. Ce conte est léger et drôle ; installe ce ton dès le départ. Pierre est sympathique, un peu naïf, mais honnête. C'est le père de Jeannette qui sera le personnage comique.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 1 ── -->
+  <div class="chapitre" id="ch1">
+    <div class="chapitre-header">
+      <span class="chapitre-num">I</span>
+      <span class="chapitre-titre">La belle Jeannette et le père cupide</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Quelle idée, lui si pauvre, de tomber amoureux de la fille du plus riche paysan de Ploaré ! Jeannette plaisait à Pierre, bien sûr — et Pierre plaisait à Jeannette, qui n'aurait pas demandé mieux que de l'épouser. Mais cela n'était pas du tout, mais pas du tout, du goût du père. Quand on est fille d'un riche paysan — la fille unique, en plus — on n'épouse pas un pauvre marin ! Pierre avait fait sa demande. On lui avait ri au nez.</p>
+      <p>Le père de Jeannette lui avait dit :</p>
+      <p class="dialogue">— Tu voudrais que je te donne ma fille en mariage, la plus jolie et la plus riche de la paroisse de Ploaré, à un pauvre comme toi ! Si tu savais le nombre de prétendants qu'elle a, et des plus fortunés ! Tiens, l'avant-veille, un riche bourgeois de Quimper m'a fait présent du plus beau cheval qui puisse se trouver. Et toi, qu'as-tu à m'offrir ? Une douzaine de sardines, peut-être, et c'est tout ! ricana-t-il. Offre-moi un cheval encore plus beau et tu épouseras ma fille !</p>
+      <p>Où voulez-vous que Pierre trouve une aussi grosse somme d'argent pour acheter une telle monture ?</p>
+      <p>Quand Pierre et sa mère allèrent au pardon de Sainte-Anne-la-Palud, à pied en passant par les grèves, ils virent à la procession la belle Jeannette, portant fièrement une bannière, son beau costume breton brillant dans le soleil. La mère de Pierre lui dit :</p>
+      <p class="dialogue">— Elle n'est pas pour toi. Fais-toi une raison.</p>
+      <p>Et le pauvre Pierre ne put que soupirer tristement.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Le père de Jeannette doit être joué avec un côté bouffon — son discours sur ses prétendants fortunés est à la fois arrogant et ridicule. Joue-le avec une voix un peu nasillarde et condescendante. Les enfants adorent les personnages qui se croient très malins et qui vont se faire avoir à la fin.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 2 ── -->
+  <div class="chapitre" id="ch2">
+    <div class="chapitre-header">
+      <span class="chapitre-num">II</span>
+      <span class="chapitre-titre">La sardine d'argent</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Justement, le lendemain de ce jour, Pierre alla pêcher du côté de la pointe du Leydé. Il avait jeté plusieurs fois son filet à la mer — mais rien. Il le rejeta une dernière fois et, quand il le releva, il y avait au fond du filet un seul poisson : une sardine, toute petite, mais qui brillait, qui brillait comme de l'argent au soleil.</p>
+      <p>Pierre, tout étonné, prit la sardine dans ses mains. Et fut encore plus stupéfait quand elle se mit à lui parler — oui, à lui parler, comme toi et moi.</p>
+      <p class="dialogue">— Pierre, lui dit cette étrange sardine, je suis un poisson magique. Remets-moi dans l'eau, sinon je vais mourir. Rejette-moi dans l'océan et j'exaucerai tes désirs.</p>
+      <p>Quand notre marin retrouva l'usage de la parole, il dit :</p>
+      <p class="dialogue">— N'aie crainte, petit poisson, je vais te remettre à l'eau. Mais écoute d'abord : j'aime une fille et je voudrais bien l'épouser. Son père ne le veut pas car je suis trop pauvre. Il m'a dit que si je lui apportais un beau cheval, il me la donnerait en mariage.</p>
+      <p class="dialogue">— Tu l'auras ton cheval, Pierre ! répondit la sardine. Viens demain sur la plage du Ris !</p>
+      <p>Pierre remit alors très délicatement le poisson mystérieux à l'eau. Celui-ci disparut vers les profondeurs dans un éclair d'argent. Pierre rangea son filet et rentra au port.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Le moment où la sardine se met à parler est à jouer avec une stupeur totale. Prends le temps de cette stupeur avant que Pierre réponde. La sardine, elle, est vive, directe, efficace — à l'opposé du discours pompeux du père. Sa voix peut être petite et argentée, comme le poisson. La plage du Ris est une vraie plage de Douarnenez — les enfants du coin la connaissent.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 3 ── -->
+  <div class="chapitre" id="ch3">
+    <div class="chapitre-header">
+      <span class="chapitre-num">III</span>
+      <span class="chapitre-titre">Le cheval de la plage du Ris</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Le lendemain matin, au petit jour, Pierre était fidèle au rendez-vous sur la plage du Ris. Il s'approcha de l'eau et vit, tout au bord, un hippocampe — tu sais ce que c'est : un cheval de mer, un petit animal pas plus grand que le pouce, qui nageait dans les vagues argentées.</p>
+      <p>Soudain, au moment où le soleil se levait, l'hippocampe se transforma en magnifique cheval. Jamais Pierre n'en avait vu d'aussi beau — grand, élancé, avec une belle robe fauve. Il sortit de l'eau, s'ébroua et vint à la rencontre de Pierre en hennissant joyeusement. La sardine d'argent avait tenu sa promesse.</p>
+      <p>Pierre se rendit donc chez le père de la belle Jeannette, le bel étalon le suivant docilement. Tu imagines l'étonnement du riche paysan et la joie de sa fille quand Pierre pénétra dans la cour de la ferme.</p>
+      <p class="dialogue">— Vous m'avez demandé un beau cheval. Le voici !</p>
+      <p>Malheureusement, le cupide paysan ne fut pas long à reprendre ses esprits :</p>
+      <p class="dialogue">— Tu m'as apporté un très beau cheval et je t'en remercie… mais depuis, l'un des prétendants de Jeannette lui a offert une parure d'argent. Offre-lui un collier plus beau encore et tu auras ma fille.</p>
+      <p>Pierre s'en retourna chez lui après avoir souri tristement à sa belle.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La transformation de l'hippocampe en cheval au lever du soleil est magique — décris-la lentement. Puis le retournement du père doit être joué avec son caractère bouffon : une petite pause après « je t'en remercie… », puis le « mais » qui annule tout. Les enfants vont gronder. C'est parfait — c'est le ressort comique du conte.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 4 ── -->
+  <div class="chapitre" id="ch4">
+    <div class="chapitre-header">
+      <span class="chapitre-num">IV</span>
+      <span class="chapitre-titre">Le collier de perles</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Pierre n'eut pas le courage d'aller à la pêche et passa la journée à ramender ses filets. Le soir venu, il alla se promener au bord de la mer en pensant à sa chère Jeannette. Brusquement, la sardine d'argent apparut et lui dit :</p>
+      <p class="dialogue">— Alors Pierre, es-tu content de ton cheval ?<br>— Oui, répondit-il, mais cela n'aura servi à rien. Pour épouser ma Jeannette, il me faut maintenant lui apporter un collier plus beau que l'argent ! Où veux-tu que j'aille chercher cela ?<br>— Ce n'est pas difficile ! Tu vas voir, laisse-moi faire : je vais aller visiter quelques huîtres au fond de l'océan.</p>
+      <p>Sitôt dit, sitôt fait. Le petit poisson disparut dans la mer et revint, au bout de peu, tirant dans sa gueule un long collier de belles perles irisées.</p>
+      <p class="dialogue">— Voilà pour toi. J'espère que cela fera l'affaire.<br>— Merci, merci ! répétait Pierre, ébloui par les perles qui brillaient doucement dans la nuit tombante. Comme tu es gentille !<br>— Toi, tu m'avais sauvé la vie — je ne l'ai pas oublié. Si tu as encore des ennuis, reviens me trouver. Mais attention : ce sera la dernière fois que je pourrai t'aider.</p>
+      <p>Le lendemain matin, Pierre se présenta à la ferme, tenant à la main le fameux collier. Le paysan ouvrit des yeux grands comme ça, se gratta le nez, puis la tête, et finit par dire :</p>
+      <p class="dialogue">— Il est vraiment très beau ton collier, Pierre !</p>
+      <p>Jeannette, qui était accourue en reconnaissant la voix de son soupirant, souriait de toutes ses dents.</p>
+      <p class="dialogue">— Mais… continua le cupide paysan, hier au soir, un nouveau prétendant m'a offert un sac rempli de belles pièces d'argent. Apporte-nous un sac de pièces d'or et tu auras ma fille.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La sardine qui plonge chercher des perles dans les huîtres est délicieusement absurde et charmante. Et le troisième refus du père — après le cheval, après le collier — doit déclencher une vraie indignation chez les enfants. Laisse-les réagir avant de continuer. C'est le moment où Pierre va enfin confronter le père.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 5 ── -->
+  <div class="chapitre" id="ch5">
+    <div class="chapitre-header">
+      <span class="chapitre-num">V</span>
+      <span class="chapitre-titre">Les pièces d'or — et l'adieu</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Pierre retourna au rivage. La petite sardine arriva tout de suite vers lui. Mais cette fois, Pierre parla d'abord :</p>
+      <p class="dialogue">— Quand même ! Vous m'avez demandé un cheval — je vous l'ai apporté. Vous m'avez demandé un collier — le voilà. Vous me demandez maintenant des pièces d'or. Si je vous les apporte, me jurez-vous que vous ne réclamerez pas autre chose ?<br>— Non, je t'en donne ma parole ! Apporte-moi ce cadeau, ce sera le dernier que je te demanderai, et tu auras la Jeannette !</p>
+      <p>La sardine d'argent dit alors à Pierre :</p>
+      <p class="dialogue">— Tu t'es bien débrouillé, Pierre. Il t'a donné sa parole — il ne pourra s'en dédire. Je vais exaucer ton désir. Tu sais, je n'avais le droit de réaliser que trois de tes souhaits. Ensuite tu ne me verras plus. Regarde bien et tends les mains.</p>
+      <p>Le petit poisson se mit à frétiller comme s'il était pris au bout d'une ligne et, tout en remuant, des écailles lui sautaient du dos et venaient retomber dans les mains tendues de Pierre — où elles se transformaient immédiatement en belles pièces d'or.</p>
+      <p>Quand les mains du jeune marin en furent pleines, la sardine s'arrêta et dit :</p>
+      <p class="dialogue">— Tu en as assez largement pour contenter ton futur beau-père. Adieu maintenant — je ne reviendrai plus !<br>— Adieu, gentil poisson, et merci pour tout !<br>— Sois heureux, Pierre, avec ta Jeannette.</p>
+      <p>Et elle disparut dans le fond de la mer.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La scène des écailles qui se transforment en or est visuelle et magique — la sardine qui frétille, les écailles qui volent, les mains de Pierre qui se remplissent. Mime-la. L'adieu de la sardine est touchant : elle disparaît sans bruit, modestement, comme elle était venue. C'est une amie fidèle qui s'efface. Laisse ce moment exister avant de passer à la chute.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 6 ── -->
+  <div class="chapitre" id="ch6">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VI</span>
+      <span class="chapitre-titre">La noce — et la cassette</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Pierre apporta triomphalement son trésor au père de la belle Jeannette, qui ne put que dire :</p>
+      <p class="dialogue">— Elle est à toi. Tu l'as bien méritée !</p>
+      <p>Pierre épousa donc sa belle. Ce fut un très grand mariage qui dura quinze jours, et les deux époux furent très heureux ensemble.</p>
+      <p>Ah ! J'allais oublier de te le dire.</p>
+      <p>Quelque temps après les noces, le père de Jeannette voulut voir les pièces d'or apportées par son gendre, qu'il tenait bien cachées dans une cassette. Il l'ouvrit — mais au lieu de belles espèces sonnantes et trébuchantes, il ne découvrit que… des écailles desséchées.</p>
+      <p>Le bonhomme était avare, mais il n'était point sot : il préféra se taire.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La chute finale — les écailles desséchées — est un des meilleurs moments du conte. Fais une vraie pause avant de la révéler, comme si tu allais oublier de la dire. Puis la dernière phrase — « il préféra se taire » — doit tomber comme une pierre dans l'eau. Laisse les enfants rire. Ce n'est pas une punition terrible : c'est juste la magie qui reprend ce qu'elle avait donné à qui n'avait pas mérité de le garder.</p>
+    </div>
+  </div>
+
+  <!-- ── Questions ── -->
+  <div class="fin-bloc">
+    <div class="fin-titre">Questions pour discuter après le conte</div>
+    <ul class="fin-questions">
+      <li>Pierre aurait pu garder la sardine magique pour lui — une sardine qui parle, ça vaut de l'or ! Pourquoi l'a-t-il remise à l'eau ?</li>
+      <li>Le père de Jeannette demande toujours plus. Est-ce qu'il y a un moment où Pierre aurait dû s'arrêter ?</li>
+      <li>La sardine donne des écailles au père cupide — mais elles se transforment en poussière. Est-ce que c'est juste ?</li>
+      <li>Jeannette n'a presque pas parlé dans tout le conte. Qu'est-ce qu'elle pensait, selon toi, pendant toutes ces épreuves ?</li>
+      <li>Si tu avais une sardine magique qui pouvait exaucer trois vœux, qu'est-ce que tu lui demanderais ?</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.chapitre').forEach(el => obs.observe(el));
+
+  function scrollToId(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const chapitres = document.querySelectorAll('.chapitre');
+  const navBtns   = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    chapitres.forEach((ch, i) => {
+      if (ch.getBoundingClientRect().top < window.innerHeight / 2) current = i;
+    });
+    navBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
