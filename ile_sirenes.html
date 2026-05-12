@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Île aux Sirènes — Contes de Bretagne</title>
+<link rel="stylesheet" href="css/conte.css">
+</head>
+<body>
+
+<a class="btn-retour" href="index.html#livre">← Grimoire</a>
+<div class="progress-bar" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>L'Île aux Sirènes</h1>
+    <p class="hero-sub">Yann de Plomarch — La baie de Douarnenez</p>
+    <div class="badges">
+      <span class="badge local">★ Plomarch · Pointe du Raz · Île Tristan</span>
+      <span class="badge">Version enfants · 20 min</span>
+      <span class="badge">Dès 8 ans</span>
+      <span class="badge">Mer &amp; Amour &amp; Magie</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-chapitres" id="nav">
+  <button class="nav-btn active" onclick="scrollTo(0,0)">Début</button>
+  <button class="nav-btn" onclick="scrollToId('ch1')">La pêche</button>
+  <button class="nav-btn" onclick="scrollToId('ch2')">La sirène</button>
+  <button class="nav-btn" onclick="scrollToId('ch3')">La voile enchantée</button>
+  <button class="nav-btn" onclick="scrollToId('ch4')">L'île</button>
+  <button class="nav-btn" onclick="scrollToId('ch5')">Le château</button>
+  <button class="nav-btn" onclick="scrollToId('ch6')">La journée</button>
+  <button class="nav-btn" onclick="scrollToId('ch7')">L'adieu</button>
+  <button class="nav-btn" onclick="scrollToId('ch8')">Cent ans</button>
+</nav>
+
+<div class="main">
+
+  <div class="info-anim">
+    <strong>Pour l'animateur :</strong> Les encadrés sont des <em>Conseils du conteur</em> — ils ne se lisent pas à voix haute. Les lieux de ce conte sont réels et visibles depuis Douarnenez : Plomarch, la pointe du Raz, l'île Tristan, le Coulinec, le Flimiou. Le thème du temps qui s'écoule différemment dans le monde des fées est une des plus vieilles croyances bretonnes — on le retrouve aussi dans la légende de Brocéliande. Ici il prend une dimension particulièrement mélancolique.
+  </div>
+
+  <!-- ── Intro ── -->
+  <div class="chapitre" id="ch0">
+    <div class="texte">
+      <p>Yann était un jeune marin douarneniste qui vivait, il y a bien longtemps de cela, avec une vieille tante dans une petite chaumière du côté des Plomarch. Il avait été orphelin très jeune : son père avait péri en mer un soir de tempête, et sa mère en était morte de chagrin peu de temps après.</p>
+      <p>C'était un solide et hardi marin — toujours le premier à mettre sa barque à l'eau le matin, souvent le dernier à rejoindre le port le soir. Non, il ne craignait pas d'aller loin au large jeter ses filets. En outre un brave garçon, sachant rendre service, et toujours avec le sourire. Ainsi, quand il avait fini de ramender ses filets ou lorsqu'il avait un moment de libre, au lieu de courir les cafés comme les jeunes gens de son âge, il restait auprès de sa vieille tante et l'aidait à défricher son maigre lopin de terre.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Installe bien Yann avant que l'aventure commence — sa générosité, son courage, sa fidélité à sa tante. Ce n'est pas un héros qui cherche l'aventure : c'est un homme ordinaire et bon. Ce qu'il va vivre lui arrive parce qu'il est ainsi, pas parce qu'il l'a cherché.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 1 ── -->
+  <div class="chapitre" id="ch1">
+    <div class="chapitre-header">
+      <span class="chapitre-num">I</span>
+      <span class="chapitre-titre">La pêche à la Pointe du Raz</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Sa mystérieuse aventure commence un jour de printemps où il avait profité du beau temps et de la mer calme pour aller pêcher dans les parages de la pointe du Raz. L'endroit avait mauvaise réputation : des anciens racontaient y avoir vu des barques noires aux voiles déchirées venues d'on ne sait où. Mais ces parages passaient aussi pour très poissonneux.</p>
+      <p>Pourtant Yann, ce jour-là, n'avait rien pris — bien qu'il eût souvent jeté son filet à l'eau. Il décida de le faire une dernière fois avant de regagner la baie de Douarnenez. Au moment de le relever, il sentit tout de suite qu'il y avait quelque chose dedans. Jamais il ne lui avait paru si lourd — sûrement qu'il devait être rempli de poissons.</p>
+      <p>Quand il eut réussi, après beaucoup d'efforts, à hisser le filet dans la barque, quelle ne fut sa stupeur quand il se rendit compte que sa prise n'était autre… qu'une sirène.</p>
+      <p>Yann avait toujours pensé que les sirènes étaient une invention de bonne femme pour les veillées d'hiver au coin du feu. Aussi resta-t-il longtemps sans voix devant cette créature d'un autre monde.</p>
+      <p class="dialogue">— Qui es-tu ? D'où viens-tu ? lui demanda-t-il enfin.</p>
+      <p>Elle ne répondit pas. Mais des larmes coulaient de ses beaux yeux et, en même temps, elle tendait les bras vers celui qui l'avait pêchée. Elle avait une magnifique chevelure blonde qui retombait en vagues de feu sur ses épaules. Son corps effilé de poisson était recouvert d'écailles.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La stupeur de Yann doit être totale et silencieuse. Prends le temps de décrire la sirène lentement, comme si tu la voyais toi-même pour la première fois. La question — « Qui es-tu ? » — doit tomber dans un grand silence. Elle ne répond pas avec des mots. Ses larmes disent tout.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 2 ── -->
+  <div class="chapitre" id="ch2">
+    <div class="chapitre-header">
+      <span class="chapitre-num">II</span>
+      <span class="chapitre-titre">La pitié du marin</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>La première pensée de Yann avait été de ramener au port une telle capture — pour la montrer à ses camarades et aux vieux marins. Mais devant les supplications muettes de la sirène, il changea d'avis.</p>
+      <p>Délicatement, il la débacha du filet où sa prise demeurait encore attachée, et la remit à l'eau. Il sembla au jeune garçon que les yeux de la sirène brillaient de reconnaissance — mais cela ne dura qu'un bref instant. Déjà elle avait disparu au fond de l'océan.</p>
+      <p>Il ne restait plus à Yann qu'à hisser sa voile et remettre le cap sur Douarnenez.</p>
+      <p>Il fut, encore une fois, le dernier à regagner le port. La nuit était tombée quand il pénétra dans la petite chaumière des Plomarch. Il n'avait rien dit de sa capture aux camarades qu'il avait rencontrés — de crainte qu'on ne se moque de lui. Et il ne dit rien non plus à sa vieille tante qui avait commencé à tremper la soupe dès qu'elle avait reconnu les bruits de ses sabots sur les cailloux du chemin.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Yann aurait pu garder la sirène, la montrer, en tirer gloire ou argent. Il ne le fait pas — simplement parce qu'elle pleure. C'est ce geste gratuit, sans calcul, qui déclenche toute l'aventure. Remarque aussi qu'il garde le secret : il ne cherche pas à être cru. Ça dit quelque chose de lui.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 3 ── -->
+  <div class="chapitre" id="ch3">
+    <div class="chapitre-header">
+      <span class="chapitre-num">III</span>
+      <span class="chapitre-titre">La voile enchantée</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Le lendemain, Yann préféra ne pas s'en aller seul en mer et resta pêcher en compagnie de camarades au milieu de la baie. Il faisait très beau, il n'y avait pas un souffle de vent.</p>
+      <p>Soudain, comme par enchantement, la voile de la barque de Yann se gonfla comme un ballon — et le bateau se mit à s'éloigner vers le large. Les autres voiles pendaient toujours inertes, alors qu'il semblait qu'une forte brise soufflât sur celle de Yann seul. Celui-ci ne réussit pas à faire changer de cap à son navire, qui continua à avancer de plus en plus vite.</p>
+      <p>Bientôt ce ne fut qu'un point à l'horizon pour les autres marins, encore éberlués par ce qui venait de se passer. Ils levèrent leurs filets et rentrèrent au port, à la godille, raconter la mystérieuse disparition de Yann.</p>
+      <p>Pendant ce temps, le bateau continuait son voyage vers l'Ouest. La nuit vint, les étoiles s'allumèrent. Yann, allongé au fond de son embarcation, resta longtemps à les contempler en se demandant comment finirait son étonnant voyage. Il s'endormit enfin.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La scène de la voile qui se gonfle seule, sous un ciel sans vent, est un des plus beaux moments du conte. Fais-la lentement — la stupeur des camarades, le bateau qui disparaît. Puis le silence de Yann, seul sous les étoiles. Il n'a pas peur — il regarde le ciel. Ce calme face à l'inconnu est sa force.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 4 ── -->
+  <div class="chapitre" id="ch4">
+    <div class="chapitre-header">
+      <span class="chapitre-num">IV</span>
+      <span class="chapitre-titre">L'île mystérieuse</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Quand il se réveilla, le jour se levait. Au loin, une île se détachait sur l'horizon. Déjà de grands oiseaux blancs volaient au-dessus de la barque. Bientôt elle fut assez proche pour permettre au jeune garçon de mieux la distinguer. Elle semblait couverte d'une végétation dense. Au centre, sur une colline, se dressait un château qui brillait dans les feux du matin.</p>
+      <p>Le bateau aborda une petite crique de sable blanc et Yann le tira sur la plage. Il allait partir à la recherche d'eau pour apaiser sa soif quand il entendit des rires dans les fourrés. Il s'approcha et aperçut des jeunes filles vêtues de longues robes blanches, qui s'amusaient à s'asperger d'eau depuis une source qui jaillissait d'entre des rochers.</p>
+      <p>Lorsqu'elles virent Yann, les rires cessèrent. La plus belle des jeunes filles se détacha de ses camarades et vint au-devant du jeune homme.</p>
+      <p class="dialogue">— Bonjour Yann, je t'attendais !</p>
+      <p>Le marin, n'en croyant pas ses yeux, reconnut la sirène qu'il avait rendue à la mer l'avant-veille. Il ne dit rien mais ouvrit les yeux grands comme des soucoupes. La jeune fille éclata de rire.</p>
+      <p class="dialogue">— Tu demeures aussi muet que moi lorsque je me trouvais dans ta barque ! Oui, c'est bien moi — mais sur cette île, j'ai un corps et des jambes comme les femmes de ton monde. Je m'appelle Irca. Viens, accompagne-moi jusqu'au château — ma mère t'attend.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Irca qui rit de la stupeur de Yann, en lui rappelant que c'était lui le muet la première fois — c'est un moment de légèreté et de complicité immédiate. Ce rire installe une égalité entre eux. Irca n'est pas une figure mystérieuse et inaccessible : elle est vive, joyeuse, bien réelle.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 5 ── -->
+  <div class="chapitre" id="ch5">
+    <div class="chapitre-header">
+      <span class="chapitre-num">V</span>
+      <span class="chapitre-titre">Le château de cristal</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Irca lui expliqua en chemin : sa mère était la reine des sirènes, fille du grand Neptune, roi des Océans. C'était elle qui, par un enchantement, avait fait venir la barque jusqu'à leur île — invisible aux yeux des navigateurs. Yann était le premier humain à en fouler le sol. La reine voulait le remercier.</p>
+      <p>Après que Yann eut bu l'eau fraîche de la source et mangé des fruits inconnus au goût délicat que lui offraient les compagnes d'Irca, celle-ci prit sa main et tous se mirent en marche vers le château.</p>
+      <p>Le château semblait fait du cristal le plus pur. Ils traversèrent plusieurs grandes salles dont les murs étaient sertis de perles brillantes, et arrivèrent dans une pièce plus vaste encore. Dans le fond, sur un trône de corail rouge, était assise une vieille dame aux cheveux gris, couronnée d'un diadème de perles noires.</p>
+      <p>Yann s'inclina profondément. La vieille dame descendit de son trône, releva le jeune homme et lui dit :</p>
+      <p class="dialogue">— Tu as sauvé la vie de ma fille unique, Irca. Si tu avais tardé à la remettre dans l'océan, elle serait morte. Les sirènes ne peuvent vivre hors de l'eau que sur cette île. Je voulais te dire toute ma reconnaissance pour ton geste généreux. Tu pourras vivre ici aussi longtemps que tu le désireras. Mais si tu veux retourner chez les tiens, tu pourras le faire. Va maintenant, avec Irca, à la découverte de notre île.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La reine donne à Yann le choix — rester ou partir. C'est important : il n'est pas prisonnier. Ce choix libre est ce qui rend son départ à la fin à la fois plus triste et plus beau. Avec les plus grands enfants, tu peux déjà poser la question à voix haute : « À sa place, est-ce que vous resteriez ? »</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 6 ── -->
+  <div class="chapitre" id="ch6">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VI</span>
+      <span class="chapitre-titre">La journée merveilleuse</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Yann passa en compagnie de la jeune fille une journée merveilleuse. Dans une campagne verdoyante où se balançaient de grandes fleurs roses, ils coururent à la poursuite de magnifiques oiseaux multicolores. Ils marchèrent le long de plages mordorées en quête de coquillages superbes, brillants comme le soleil. Ils nagèrent dans la mer bleue, claire et chaude — et chose curieuse : dès qu'Irca pénétrait dans l'eau, elle se transformait en femme-poisson. Ils firent plusieurs fois la course à la nage, et toujours Irca gagna.</p>
+      <p>Quand le soir commença à tomber, ils avaient fait le tour de l'île. Ils se retrouvèrent près de l'endroit où était la barque. Yann dit alors à Irca :</p>
+      <p class="dialogue">— Ma chère Irca, j'ai passé une très bonne journée avec toi. Mais je pense qu'il serait temps maintenant de retourner chez les miens.</p>
+      <p>Le beau visage de la jeune fille se remplit de tristesse. Elle répondit doucement :</p>
+      <p class="dialogue">— J'avais espéré que tu serais resté parmi nous, que tu serais devenu mon époux. Mais je savais au fond de mon cœur que c'était impossible. Fais selon ton désir. Remonte dans ta barque — elle te ramènera dans ton pays.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Cette journée est le cœur lumineux du conte — course, rires, mer chaude, oiseaux. Laisse-la exister pleinement avant que la tristesse arrive. Le moment où Irca avoue qu'elle l'aimait est très doux et très adulte. Avec les plus jeunes, tu peux juste dire qu'elle était triste de le voir partir. Avec les plus grands, laisse les mots de la jeune fille résonner.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 7 ── -->
+  <div class="chapitre" id="ch7">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VII</span>
+      <span class="chapitre-titre">L'adieu et les larmes de perles</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Yann mit donc la barque à l'eau et hissa la voile. Il prit la barre en faisant un geste d'adieu vers Irca. Celle-ci entra dans l'eau, se transforma immédiatement en femme-poisson et se mit à nager à côté du bateau.</p>
+      <p>Au bout d'un moment, elle s'arrêta.</p>
+      <p class="dialogue">— Je n'irai pas plus loin. Je vais retourner vers mon île. Adieu, gentil Yann.</p>
+      <p>Elle se mit à pleurer. Et dès que ses larmes touchaient la mer, elles se transformaient en perles. Puis, d'un coup de queue, elle fit demi-tour. À la surface de l'océan, il ne resta qu'un sillage argenté — puis tout redevint calme.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Les larmes qui deviennent des perles — c'est l'image la plus poétique du conte. Dis-la très lentement. Puis le sillage argenté qui disparaît. Puis le silence. Ne remplis pas ce silence. Laisse les enfants y rester un moment avant de continuer.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 8 ── -->
+  <div class="chapitre" id="ch8">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VIII</span>
+      <span class="chapitre-titre">Cent ans plus tard</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Deux jours plus tard, la barque de Yann arrivait à l'entrée de la baie de Douarnenez. Il fut bien vite étonné — et son étonnement grandit au fur et à mesure qu'il s'approchait du port. Pourquoi ? Il reconnaissait, et en même temps il ne reconnaissait pas : le Coulinec, l'île Tristan, le Flimiou — oui, c'était bien ça. Mais toutes ces maisons, ces bateaux — il ne les avait jamais vus.</p>
+      <p>Quand Yann descendit sur le quai, il fut entouré de marins habillés de façon différente de la sienne — et tous inconnus. Ils se moquèrent du jeune homme :</p>
+      <p class="dialogue">— Qui es-tu ? Tu te crois au Mardi-Gras pour être habillé comme dans l'ancien temps ?<br>— Je suis Yann, répétait le malheureux. Vous ne me reconnaissez pas ?</p>
+      <p>Il prit le chemin de la chaumière. Mais il n'en trouva aucune trace. À l'endroit exact où aurait dû se trouver la maisonnette de sa tante, il y avait un champ de blé dont les tiges vertes ondulaient au gré du vent. Yann s'assit sur un tas de pierres et, désespéré, se mit à pleurer.</p>
+      <p>Un vieux paysan qui allait aux champs s'arrêta près de lui. Yann lui raconta son histoire. Le vieux paysan l'écouta, puis dit :</p>
+      <p class="dialogue">— J'ai entendu raconter par mon grand-père que dans ce champ-là, il y avait une chaumière où habitait un jeune marin dont le bateau disparut mystérieusement par un jour de beau temps. Ce serait donc toi ce marin ? Est-ce possible ? Cela s'est passé il y a cent ans ou plus… À moins que dans ton île aux sirènes, le temps ne passe plus lentement que dans notre monde ! En tous les cas, si tu cherches un endroit pour dormir, j'ai une cabane près de ma ferme — tu peux y venir.</p>
+      <p>Yann reprit sa vie de marin. Les gens à qui il avait raconté son aventure le prenaient pour un simple d'esprit — mais on le laissait tranquille.</p>
+      <p>Personne ne s'inquiéta quand, un soir, sa barque ne rentra pas. Seul le vieux paysan chez qui il logeait se dit :</p>
+      <p class="dialogue">— Il est reparti vers son île enchantée. J'espère qu'il y arrivera.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Le retour de Yann est le moment le plus douloureux du conte. Il reconnaît l'île Tristan, le Coulinec — des lieux réels, visibles depuis Douarnenez — mais plus rien d'humain n'est pareil. Cent ans ont passé en deux jours. Sa tante est morte depuis longtemps, sa maison n'existe plus. Insiste sur ce que Yann <em>reconnaît</em> et ce qu'il ne reconnaît plus — l'écart entre les deux, c'est le vertige du temps. La fin ouverte — « j'espère qu'il y arrivera » — est une des plus belles fins de conte : on ne sait pas. Peut-être est-il retourné auprès d'Irca. Laisse les enfants décider.</p>
+    </div>
+  </div>
+
+  <!-- ── Questions ── -->
+  <div class="fin-bloc">
+    <div class="fin-titre">Questions pour discuter après le conte</div>
+    <ul class="fin-questions">
+      <li>Yann a remis la sirène à l'eau alors que personne ne le regardait. Pourquoi l'a-t-il fait, selon toi ?</li>
+      <li>Irca lui a dit qu'elle aurait voulu qu'il reste et devienne son époux. Yann a-t-il bien fait de rentrer chez lui ?</li>
+      <li>Sur l'île des sirènes, le temps passe plus lentement. Est-ce que tu trouves ça beau ou triste ?</li>
+      <li>Les larmes d'Irca se transforment en perles. Qu'est-ce que tu imagines qu'il y a au fond de la mer, là où elle a pleuré ?</li>
+      <li>À la fin, Yann repart en mer et ne revient plus. Où est-il allé, selon toi ?</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.chapitre').forEach(el => obs.observe(el));
+
+  function scrollToId(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const chapitres = document.querySelectorAll('.chapitre');
+  const navBtns   = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    chapitres.forEach((ch, i) => {
+      if (ch.getBoundingClientRect().top < window.innerHeight / 2) current = i;
+    });
+    navBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
