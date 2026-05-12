@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pourquoi la Mer est Salée — Contes de Bretagne</title>
+<link rel="stylesheet" href="css/conte.css">
+</head>
+<body>
+
+<a class="btn-retour" href="index.html#livre">← Grimoire</a>
+<div class="progress-bar" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Pourquoi la Mer est Salée</h1>
+    <p class="hero-sub">Le moulin magique — Maltameï</p>
+    <div class="badges">
+      <span class="badge local">★ Mer de Bretagne</span>
+      <span class="badge">Version enfants · 15 min</span>
+      <span class="badge">Dès 6 ans</span>
+      <span class="badge">Magie &amp; Mer</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-chapitres" id="nav">
+  <button class="nav-btn active" onclick="scrollTo(0,0)">Début</button>
+  <button class="nav-btn" onclick="scrollToId('ch1')">La vieille</button>
+  <button class="nav-btn" onclick="scrollToId('ch2')">Le moulin</button>
+  <button class="nav-btn" onclick="scrollToId('ch3')">Le secret</button>
+  <button class="nav-btn" onclick="scrollToId('ch4')">La confiture</button>
+  <button class="nav-btn" onclick="scrollToId('ch5')">Le miel</button>
+  <button class="nav-btn" onclick="scrollToId('ch6')">Le sel</button>
+</nav>
+
+<div class="main">
+
+  <div class="info-anim">
+    <strong>Pour l'animateur :</strong> Les encadrés sont des <em>Conseils du conteur</em> — ils ne se lisent pas à voix haute. Ce conte fonctionne sur la répétition et le corps : mimer le moulin à manivelle, chuchoter les formules magiques, jouer la panique de Léon. Plus tu t'engages physiquement, plus les enfants embarquent. Les mots magiques — <em>Maltameï</em> et <em>Agan pen, agan di pen</em> — sont en vieux breton. Fais-les répéter aux enfants dès le départ, ils en auront besoin.
+  </div>
+
+  <!-- ── Intro ── -->
+  <div class="chapitre" id="ch0">
+    <div class="texte">
+      <p>C'était il y a longtemps — y a très longtemps. À cette époque, la mer n'était pas salée. C'était juste de l'eau. De l'eau fraîche, de l'eau douce — on pouvait la boire, on pouvait arroser les plantes. C'était très, très pratique.</p>
+      <p>Il y avait un homme qui avait un bateau, un petit bateau. Il allait pêcher, puis il revenait cultiver ses terres où il faisait pousser des fruits et des légumes. Un brave homme, le cœur sur la main. Il avait deux fils : l'un s'appelait Pierrot, l'autre s'appelait Léon.</p>
+      <p>Pierrot était plutôt malin. Léon, lui… était complètement stupide. On disait de lui qu'il était né la bouche ouverte et que son intelligence s'était envolée. On ne voulait surtout pas avoir de problèmes avec Léon.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Commence posément, presque à voix basse, comme quelqu'un qui raconte un secret très ancien. La description de Léon — « né la bouche ouverte et que son intelligence s'était envolée » — peut se dire avec un sourire complice. Les enfants adorent les personnages un peu bêtes.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 1 ── -->
+  <div class="chapitre" id="ch1">
+    <div class="chapitre-header">
+      <span class="chapitre-num">I</span>
+      <span class="chapitre-titre">La vieille dans la forêt</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Un jour, le père revint de la pêche avec trois gros poissons. Il venait juste d'accoster quand il vit une vieille femme sur le quai. Oh, la pauvre — elle n'avait pas l'air bien du tout. Toute maigrichonne, toute fluette, vêtue de haillons. Il lui demanda si elle allait bien.</p>
+      <p>Elle lui dit que, ma foi, elle avait bien faim.</p>
+      <p>Alors il lui proposa tout de suite un de ses poissons, sans hésiter.</p>
+      <p class="dialogue">— Oh mon brave, merci ! Pourriez-vous m'accorder encore une petite faveur ?<br>— Que désirez-vous ?<br>— J'aimerais bien que vous m'accompagniez jusqu'à chez moi. J'habite dans la forêt.</p>
+      <p>Il l'accompagna. Au cœur de la forêt, il y avait une petite clairière, et dans cette clairière, une petite maison — une cahute, une maison de bric et de broc. L'homme n'y entra même pas. La vieille lui dit :</p>
+      <p class="dialogue">— Attends-moi ici. Je reviens — je voudrais te faire un cadeau.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Le père est généreux sans réfléchir — il donne son poisson, il accompagne la vieille. Ce naturel est important : le conte récompense la bonté simple, pas le calcul. Installe bien cette générosité avant d'arriver au moulin.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 2 ── -->
+  <div class="chapitre" id="ch2">
+    <div class="chapitre-header">
+      <span class="chapitre-num">II</span>
+      <span class="chapitre-titre">Le moulin magique</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Elle ressortit avec un moulin. Un moulin à café — pas un moulin électrique comme aujourd'hui, non. Un vieux moulin, avec une manivelle qu'on tournait à la main, comme ça.</p>
+      <p>Elle le lui tendit en disant :</p>
+      <p class="dialogue">— Ce n'est pas n'importe quel moulin. C'est un moulin magique. Il te donnera ce que tu voudras.<br>— Ah bon… ?<br>— Tourne la manivelle et dis : <em>Maltameï.</em></p>
+      <p>Elle fit une pause.</p>
+      <p class="dialogue">— C'est du vieux breton. Tu dis <em>Maltameï</em>, tu demandes ce que tu souhaites, et tu l'auras. Mais après — n'oublie pas — tu dois dire : <em>Agan pen, agan di pen.</em> C'est la formule qui arrête le moulin. Si tu ne la dis pas, le moulin continuera de tourner indéfiniment.</p>
+      <p>L'homme essaya tout de suite : <em>« Maltameï… je voudrais de la farine. »</em> Le moulin se mit à tourner, tourner, tourner — et la farine à couler, couler, couler.</p>
+      <p class="dialogue">— <em>Agan pen, agan di pen.</em></p>
+      <p>Le moulin s'arrêta net.</p>
+      <p class="dialogue">— Vieille, je vous remercie ! C'est magnifique !</p>
+      <p>Et il repartit chez lui, avec ses poissons, sa farine, et son moulin magique.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Mime la manivelle à chaque fois — c'est le geste central du conte. Dis les formules magiques à voix basse, presque en chuchotant, comme des mots précieux. Puis fais répéter <em>Maltameï</em> et <em>Agan pen, agan di pen</em> à tous les enfants ensemble — ils doivent les savoir par cœur avant la suite, sinon la tension de la fin ne fonctionne pas.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 3 ── -->
+  <div class="chapitre" id="ch3">
+    <div class="chapitre-header">
+      <span class="chapitre-num">III</span>
+      <span class="chapitre-titre">Le secret</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Rentré à la maison, le père posa le moulin sur le rebord de la cheminée. En se disant qu'après tout, ça avait l'air d'un moulin à café ordinaire — personne ne saurait que c'était magique. Il se promit de ne pas l'utiliser, ou le moins souvent possible. On ne sait jamais avec ces objets-là.</p>
+      <p>Et en effet, ils n'en avaient pas besoin — ils avaient du poisson, des légumes, de quoi manger, ils étaient heureux. Mais un jour vint une grande sécheresse, puis des tempêtes, puis la famine. On ne pouvait plus aller au jardin. Alors le père décida d'utiliser le moulin.</p>
+      <p><em>Maltameï — de la farine. Maltameï — des carottes. Maltameï — des navets. Maltameï — du beurre.</em> Ils avaient tout ce dont ils avaient besoin, et même de quoi en offrir aux voisins.</p>
+      <p>Mais Pierrot n'était pas bête.</p>
+      <p class="dialogue">— Mon père, je te vois ramener à manger alors qu'il n'y a plus rien. Comment fais-tu ?<br>— Tu peux garder un secret ?<br>— Oui.<br>— Surtout, n'en parle pas à Léon. Je ne voudrais pas avoir d'ennuis avec lui.</p>
+      <p>Le père ferma la porte du salon et expliqua à voix basse. Il parla du moulin, de <em>Maltameï</em>, de <em>Agan pen, agan di pen</em>.</p>
+      <p>La porte était bien fermée. Mais derrière la porte, il y avait Léon — l'oreille collée au bois, les yeux grands ouverts. Il avait bien repéré <em>Maltameï</em>. Et il avait vaguement entendu la formule pour arrêter le moulin, mais il n'était pas sûr des mots exacts.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La scène de la porte est à jouer physiquement : le père qui chuchote, et toi qui regards vers la porte avec un air complice envers le public — les enfants savent que Léon écoute avant même que tu le dises. C'est ce décalage entre ce que les personnages savent et ce que le public sait qui rend la suite si jubilatoire.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 4 ── -->
+  <div class="chapitre" id="ch4">
+    <div class="chapitre-header">
+      <span class="chapitre-num">IV</span>
+      <span class="chapitre-titre">La confiture de rhubarbe</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Quelques jours plus tard, Pierrot était dans le jardin, le père en mer. Léon était seul dans le salon — et il avait faim. Une envie de confiture. De la confiture de rhubarbe — il adorait la rhubarbe.</p>
+      <p>Il prit le moulin, l'emmena dans la cuisine, se coupa trois belles tranches de pain et dit d'une voix hésitante :</p>
+      <p class="dialogue">— <em>Maltameï… donne-moi de la confiture. De la confiture à la rhubarbe.</em></p>
+      <p>Le moulin se mit à tourner, tourner, tourner — et la confiture de rhubarbe à couler, couler, couler. Léon se fit une première belle tartine. Une deuxième belle tartine. Une troisième belle tartine.</p>
+      <p class="dialogue">— Bon, c'est bon maintenant. Arrête-toi. Arrête-toi ! <em>Arrête-toi !</em></p>
+      <p>Le moulin ne s'arrêtait pas. Il tournait, tournait, la confiture coulait coulait coulait.</p>
+      <p class="dialogue">— Arrête-toi, je te dis ! Arrête-toi ! Je ne sais plus comment on dit !</p>
+      <p>La porte de la cuisine s'ouvrit. Pierrot entra — et resta bouche bée devant la cuisine couverte de confiture de rhubarbe.</p>
+      <p class="dialogue">— <em>Agan pen, agan di pen</em> — arrête-toi !</p>
+      <p>Le moulin s'arrêta. Silence.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La répétition de « arrête-toi » doit monter en intensité à chaque fois — d'abord poli, puis inquiet, puis paniqué. Mime le moulin qui tourne sans s'arrêter pendant que Léon supplie. Puis le contraste net avec le calme de Pierrot : <em>Agan pen, agan di pen</em> — dit posément. Les enfants qui ont appris la formule peuvent la dire avec Pierrot.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 5 ── -->
+  <div class="chapitre" id="ch5">
+    <div class="chapitre-header">
+      <span class="chapitre-num">V</span>
+      <span class="chapitre-titre">Le miel</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Quelques semaines passèrent. Quelques mois. Léon avait promis de ne plus toucher au moulin. Il avait tenu sa promesse.</p>
+      <p>Mais un après-midi, seul à la maison, il eut une irrésistible envie de miel. La cuisine — c'était trop risqué. Le jardin ? Il alla se cacher derrière un arbre, bien à l'abri des regards. Il prit le moulin et dit :</p>
+      <p class="dialogue">— <em>Maltameï… donne-moi du miel.</em></p>
+      <p>Le moulin tourna, tourna, tourna — le miel coula, coula, coula. Une tartine. Deux tartines. Trois tartines.</p>
+      <p class="dialogue">— Arrête-toi ! Oooh comment il disait déjà… Arrête-toi, je t'en prie !</p>
+      <p>Le moulin ne s'arrêtait pas. Le miel recouvrait ses pieds, débordait sur l'herbe, se répandait dans tout le jardin. Léon pataugeait dedans.</p>
+      <p class="dialogue">— ARRÊTE-TOI !</p>
+      <p>Pierrot arriva en courant.</p>
+      <p class="dialogue">— <em>Agan pen, agan di pen</em> — arrête-toi !</p>
+      <p>Le moulin s'arrêta. Le jardin nageait dans le miel.</p>
+      <p>Cette fois, il fallut en parler au père. Le père n'était pas content — pas content du tout. Léon fut puni très lourdement. Et il promit, sur ce qu'il avait de plus cher, de ne plus jamais toucher au moulin.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La structure est identique à l'épisode de la confiture — c'est voulu. La répétition crée l'attente : les enfants savent déjà ce qui va se passer, et ils attendent quand même avec impatience. Joue le miel qui monte avec des gestes de plus en plus exaspérés. La punition du père doit sonner sérieuse — un vrai silence après.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 6 ── -->
+  <div class="chapitre" id="ch6">
+    <div class="chapitre-header">
+      <span class="chapitre-num">VI</span>
+      <span class="chapitre-titre">Le sel et la mer</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Les années passèrent. Pierrot se maria et quitta la maison. Le père vieillissait. Léon restait là — et il aurait bien aimé trouver une compagne, lui aussi. Il y en avait une qui lui plaisait bien. Mais pour la séduire, il lui faudrait de beaux vêtements, un peu d'argent, de quoi lui offrir quelque chose. Et de l'argent, Léon n'en avait pas.</p>
+      <p>Il souffla longuement. Puis il eut une idée.</p>
+      <p>Le sel ! Ce qui est rare est cher — et le sel, à cette époque, valait de l'or. Trois grandes poches de sel remplies, vendues au marché, et le tour serait joué. Il aurait gagné son argent honnêtement — il ne l'aurait pas volé.</p>
+      <p>Mais où utiliser le moulin sans risque ? Pas dans la maison. Pas dans le jardin — le père était au potager. Léon eut une idée. Il prit le bateau.</p>
+      <p>Il s'éloigna du port. Loin, très loin — tellement loin qu'on ne voyait plus la côte à l'œil nu. Là, il prépara ses trois grands sacs de jute, les ouvrit bien grands, et dit :</p>
+      <p class="dialogue">— <em>Maltameï… donne-moi du sel.</em></p>
+      <p>Le moulin se mit à tourner, tourner, tourner. Le sel à couler, couler, couler. Le premier sac se remplit. Le deuxième se remplit. Le troisième se remplit.</p>
+      <p class="dialogue">— C'est bon maintenant, arrête-toi ! Arrête-toi ! Eh… comment c'était déjà… Arrête-toi, je t'en supplie !</p>
+      <p>Le moulin tournait. Le sel débordait des sacs, s'accumulait sur le pont, alourdissait le bateau. L'embarcation s'enfonçait dans l'eau. Elle allait couler.</p>
+      <p>Dans un dernier réflexe, Léon saisit le moulin et le jeta par-dessus bord.</p>
+      <p>Le moulin coula, coula, coula — tout au fond de la mer.</p>
+      <p>Et paraît-il que le moulin tourne encore. Et c'est pour ça que la mer est salée.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Le troisième épisode doit être le plus long et le plus intense — la tension monte parce que cette fois Pierrot n'est plus là pour sauver Léon. Laisse le silence s'installer après « le moulin coula, coula, coula… tout au fond de la mer. » Puis dis la dernière phrase très lentement, comme une révélation. Les enfants ont la réponse à la question posée au début — ils l'attendaient depuis le début.</p>
+    </div>
+  </div>
+
+  <!-- ── Questions ── -->
+  <div class="fin-bloc">
+    <div class="fin-titre">Questions pour discuter après le conte</div>
+    <ul class="fin-questions">
+      <li>Pourquoi le père ne voulait-il pas que Léon sache le secret du moulin ?</li>
+      <li>Est-ce que Léon est vraiment méchant — ou juste imprudent ?</li>
+      <li>Pierrot a-t-il bien fait de garder le secret, ou aurait-il dû tout dire à Léon ?</li>
+      <li>Si tu avais un moulin magique, qu'est-ce que tu lui demanderais ? Et tu n'oublierais pas la formule pour l'arrêter ?</li>
+      <li>Est-ce que tu saurais encore dire les deux formules magiques ?</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.chapitre').forEach(el => obs.observe(el));
+
+  function scrollToId(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const chapitres = document.querySelectorAll('.chapitre');
+  const navBtns   = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    chapitres.forEach((ch, i) => {
+      if (ch.getBoundingClientRect().top < window.innerHeight / 2) current = i;
+    });
+    navBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
