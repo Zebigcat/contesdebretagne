@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Deux Bossus et les Nains — Contes de Bretagne</title>
+<link rel="stylesheet" href="css/conte.css">
+</head>
+<body>
+
+<a class="btn-retour" href="index.html#livre">← Grimoire</a>
+<div class="progress-bar" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Les Deux Bossus et les Nains</h1>
+    <p class="hero-sub">Les Danseurs de nuit de la lande de Penn-an-Roc'hou</p>
+    <div class="badges">
+      <span class="badge">Version enfants · 10 min</span>
+      <span class="badge">Dès 6 ans</span>
+      <span class="badge">Créatures &amp; Magie</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav-chapitres" id="nav">
+  <button class="nav-btn active" onclick="scrollTo(0,0)">Début</button>
+  <button class="nav-btn" onclick="scrollToId('ch1')">La lande</button>
+  <button class="nav-btn" onclick="scrollToId('ch2')">La chanson</button>
+  <button class="nav-btn" onclick="scrollToId('ch3')">Gabic à son tour</button>
+  <button class="nav-btn" onclick="scrollToId('ch4')">La punition</button>
+</nav>
+
+<div class="main">
+
+  <div class="info-anim">
+    <strong>Pour l'animateur :</strong> Les encadrés dorés sont des <em>Conseils du conteur</em> — ils ne se lisent pas à voix haute. Ce conte a été collecté à Plouaret en 1859. Les « Danseurs de nuit » — Kornikaned en breton — sont des nains du folklore breton, ni bons ni mauvais, mais toujours imprévisibles. Ce conte est très théâtral : la chanson répétée invite les enfants à participer. N'hésite pas à la chanter !
+  </div>
+
+  <!-- ── Intro ── -->
+  <div class="chapitre" id="ch0">
+    <div class="texte">
+      <p>Il y avait une fois deux bossus, Nonnic et Gabic, deux amis.</p>
+      <p>Ils étaient tailleurs de leur état, et chaque matin ils allaient en journée, chacun de son côté, dans les fermes et les manoirs du pays. Le soir venu, ils rentraient à pied, par les chemins creux et les landes, en se racontant leur journée. Deux hommes pareils, avec chacun leur bosse, leur bonne humeur et leur amitié.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Présente les deux bossus comme deux bons amis, sans moquerie — leur bosse est un fait, pas une honte. C'est leur différence de caractère qui va faire tout le conte : Nonnic est spontané et généreux, Gabic est impatient et cupide.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 1 ── -->
+  <div class="chapitre" id="ch1">
+    <div class="chapitre-header">
+      <span class="chapitre-num">I</span>
+      <span class="chapitre-titre">La lande de Penn-an-Roc'hou</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Un soir que Nonnic revenait seul de son travail, comme il passait sur la lande de Penn-an-Roc'hou, non loin du bourg de Plouaret, il entendit de petites voix grêles qui chantaient :</p>
+      <p class="dialogue">Lundi, mardi et mercredi…</p>
+      <p class="dialogue">Lundi, mardi et mercredi…</p>
+      <p>— Qui est-ce qui chante donc de la sorte ? se demanda-t-il.</p>
+      <p>Il s'approcha tout doucement. Il faisait un beau clair de lune, et il vit les Danseurs de nuit — qui sont des nains — qui dansaient en rond en se tenant les mains. L'un d'eux chantait le premier :</p>
+      <p class="dialogue">Lundi, mardi et mercredi…</p>
+      <p>Puis les autres reprenaient ensemble :</p>
+      <p class="dialogue">Lundi, mardi et mercredi…</p>
+      <p>Et c'était tout. Nonnic avait souvent entendu parler des Danseurs de nuit, mais il ne les avait jamais vus. Il se cacha derrière un rocher pour les observer. Il fut vite découvert, et hop ! — le voilà pris au milieu du cercle.</p>
+      <p>Et les nains de danser de plus belle en tournant autour de lui :</p>
+      <p class="dialogue">— Danse et chante aussi avec nous !</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La chanson des nains doit être répétée vraiment — même mélodie, même rythme, à chaque fois. C'est ce qui crée l'effet comique et permet aux enfants d'y participer. Tu peux leur faire chanter avec toi dès le début.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 2 ── -->
+  <div class="chapitre" id="ch2">
+    <div class="chapitre-header">
+      <span class="chapitre-num">II</span>
+      <span class="chapitre-titre">La chanson allongée</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Nonnic n'était pas timide. Il entra dans la danse et chanta avec eux :</p>
+      <p class="dialogue">Lundi, mardi et mercredi…</p>
+      <p>Mais comme ils répétaient toujours ces trois mots sans plus, il dit :</p>
+      <p class="dialogue">— Et après ? Votre chanson est bien courte.</p>
+      <p class="dialogue">— C'est tout, répondirent-ils.</p>
+      <p class="dialogue">— Comment, c'est tout ? Pourquoi n'ajoutez-vous pas :</p>
+      <p class="dialogue">Et jeudi et puis vendredi ?</p>
+      <p class="dialogue">— C'est vrai, répondirent-ils, c'est très joli !</p>
+      <p>Et ils chantèrent, en sautant et en trépignant de joie :</p>
+      <p class="dialogue">Lundi, mardi et mercredi,<br>Et jeudi et puis vendredi !</p>
+      <p>Et de tourner avec un entrain du diable.</p>
+      <p>Quand Nonnic, n'en pouvant plus, voulut se retirer, les nains se demandèrent entre eux :</p>
+      <p class="dialogue">— Que donnerons-nous bien à Nonnic, pour nous avoir allongé et embelli notre chanson ?</p>
+      <p class="dialogue">— Ce qu'il voudra : de l'argent et de l'or à discrétion, ou le débarrasser de sa bosse, s'il le préfère.</p>
+      <p class="dialogue">— Ah ! oui, dit Nonnic. Si vous voulez me soulager de ce fardeau que je porte depuis si longtemps, je vous laisse et l'or et l'argent.</p>
+      <p class="dialogue">— C'est cela ! Enlevons-lui sa bosse !</p>
+      <p>Ils lui frottèrent le dos avec un onguent merveilleux qui fit disparaître la bosse par enchantement. Et Nonnic s'en retourna chez lui, droit et léger, et même joli garçon.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Quand Nonnic propose les deux nouveaux jours, fais monter l'enthousiasme des nains — ils adorent ça. Puis fais la chanson complète tous ensemble, avec les enfants. Le moment de la guérison doit être joyeux et un peu magique.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 3 ── -->
+  <div class="chapitre" id="ch3">
+    <div class="chapitre-header">
+      <span class="chapitre-num">III</span>
+      <span class="chapitre-titre">Gabic veut en faire autant</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Le lendemain, quand son ami Gabic vit Nonnic arriver, il fut bien étonné — c'est à peine s'il le reconnut.</p>
+      <p class="dialogue">— Comment ! dit-il en tournant autour de lui. Et… et ta bosse ?</p>
+      <p class="dialogue">— Disparue, comme tu vois.</p>
+      <p class="dialogue">— Et comment donc cela s'est-il fait ?</p>
+      <p>Nonnic lui conta tout : la lande, les nains, la chanson, l'onguent merveilleux.</p>
+      <p class="dialogue">— Ah ! j'irai aussi, moi, voir les Danseurs de nuit à Penn-an-Roc'hou, dit Gabic. Et pas plus tard que ce soir !</p>
+      <p>Et il fit comme il l'avait dit.</p>
+      <p>Quand il arriva sur la lande, les nains y dansaient déjà en chantant :</p>
+      <p class="dialogue">Lundi, mardi et mercredi,<br>Et jeudi et puis vendredi !</p>
+      <p>Gabic s'approcha et ils lui crièrent :</p>
+      <p class="dialogue">— Viens danser avec nous !</p>
+      <p>Et le voilà dans la ronde, à danser et chanter comme eux :</p>
+      <p class="dialogue">Lundi, mardi et mercredi,<br>Et jeudi et puis vendredi !</p>
+      <p class="dialogue">— Et ensuite ? dit-il.</p>
+      <p class="dialogue">— C'est tout. Est-ce que vous en savez plus long ?</p>
+      <p class="dialogue">— Oui donc !</p>
+      <p class="dialogue">— Oh ! dites alors ! Dites alors !</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">Ici les enfants savent déjà ce qui va se passer — ils sont plus malins que Gabic. Joue sur ce décalage : prends la voix enthousiaste et naïve de Gabic, et observe les enfants qui commencent à deviner le piège. « Dites alors ! Dites alors ! » doit résonner comme un avertissement.</p>
+    </div>
+  </div>
+
+  <!-- ── Ch 4 ── -->
+  <div class="chapitre" id="ch4">
+    <div class="chapitre-header">
+      <span class="chapitre-num">IV</span>
+      <span class="chapitre-titre">La punition</span>
+      <span class="chapitre-ligne"></span>
+    </div>
+    <div class="texte">
+      <p>Et Gabic, tout fier, ajouta :</p>
+      <p class="dialogue">Et samedi et dimanche !</p>
+      <p>Silence.</p>
+      <p class="dialogue">— Oh ! ce n'est pas bon ! Cela ne rime pas ! Il nous a gâté notre chanson, qui était si jolie ! Il faut l'en punir ! crièrent tous les petits hommes à la fois, en se remuant et s'agitant autour de Gabic comme une fourmilière.</p>
+      <p class="dialogue">— Il faut ajouter la bosse de Nonnic à la sienne ! dit quelqu'un.</p>
+      <p class="dialogue">— Oui, c'est cela ! Ajoutons la bosse de Nonnic à la sienne !</p>
+      <p>Ce qui fut fait sur-le-champ.</p>
+      <p>Et le pauvre Gabic s'en retourna chez lui, tout honteux et ployant sous le faix, portant sa propre bosse et celle de son ami. Il lui fallut les porter toutes les deux, le reste de sa vie.</p>
+    </div>
+    <div class="conseil-conteur">
+      <div class="conseil-label">Conseil du conteur</div>
+      <p class="conseil-texte">La chute est comique mais juste : Gabic a voulu imiter son ami sans comprendre ce qui avait marché. La leçon n'est pas qu'il faut éviter les nains — c'est qu'on ne peut pas copier la créativité. Tu peux demander aux enfants : « Qu'est-ce que Gabic a fait de différent de Nonnic ? »</p>
+    </div>
+  </div>
+
+  <!-- ── Questions ── -->
+  <div class="fin-bloc">
+    <div class="fin-titre">Questions pour discuter après le conte</div>
+    <ul class="fin-questions">
+      <li>Pourquoi les nains ont-ils aimé ce que Nonnic a ajouté, mais pas ce que Gabic a ajouté ?</li>
+      <li>Est-ce que Gabic a fait quelque chose de vraiment méchant, ou juste une erreur ?</li>
+      <li>Nonnic a choisi de se débarrasser de sa bosse plutôt que de prendre l'or. Qu'aurais-tu choisi, toi ?</li>
+      <li>Est-ce que ça t'est déjà arrivé de copier quelqu'un et que ça ne marche pas aussi bien ?</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+    document.getElementById('progress').style.width = pct + '%';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.chapitre').forEach(el => obs.observe(el));
+
+  function scrollToId(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const chapitres = document.querySelectorAll('.chapitre');
+  const navBtns = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    chapitres.forEach((ch, i) => {
+      if (ch.getBoundingClientRect().top < window.innerHeight / 2) current = i;
+    });
+    navBtns.forEach((b, i) => b.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
